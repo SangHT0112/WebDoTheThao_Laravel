@@ -34,3 +34,5 @@
             }
         });
     </script> <!--end::OverlayScrollbars Configure--> <!--end::Script-->
+
+    @yield('footer')
