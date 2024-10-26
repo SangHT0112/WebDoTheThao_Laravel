@@ -1,7 +1,7 @@
 @extends('admin.main')
 
 @section('head')
-    <script src="/public/template/ckeditor/ckeditor.js"></script>
+    <script src="/public/ckeditor/ckeditor.js"></script>
 @endsection
 
 @section('content')
@@ -11,19 +11,22 @@
         <label for="menu">Tên Danh Mục</label>
         <input type="text" class="form-control" name="name" id="name" placeholder="Enter name">
     </div>
-    
+
     <div class="form-group">
         <label>Danh Mục</label>
         <select class="form-control" name="parent_id" id="parent_id">
             <option value="0">Danh Mục Cha</option>
+            @foreach($menus as $menu)
+                <option value="{{$menu->id}}">{{$menu->name}}</option>
+            @endforeach
         </select>
     </div>
-    
+
     <div class="form-group">
         <label>Mô Tả</label>
         <textarea class="form-control" name="description" id="description" rows="3" placeholder="Enter description"></textarea>
     </div>
-    
+
     <div class="form-group">
         <label>Nội Dung Chi Tiết</label>
         <textarea class="form-control" name="content" id="content" rows="5" placeholder="Enter content"></textarea>
@@ -45,12 +48,12 @@
             <label for="no_active" class="form-check-label">Không</label>
         </div>
     </div>
-    
+
     <div class="form-group">
         <label for="created_at">Ngày tạo</label>
         <input type="datetime-local" class="form-control" name="created_at" id="created_at">
     </div>
-    
+
     <div class="form-group">
         <label for="updated_at">Ngày Cập Nhật</label>
         <input type="datetime-local" class="form-control" name="updated_at" id="updated_at">
