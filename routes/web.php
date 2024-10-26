@@ -30,9 +30,13 @@ Route::middleware(['auth'])->group(function () {
 
         #menu
         Route::prefix('menus')->group(function(){
-            Route::get('add', [MenuController::class,'create']);
+            Route::get('add', [MenuController::class,'create'])->name('admin.menus.add');
             Route::post('add', [MenuController::class,'store']); // goi vao store
+            Route::get('list', [MenuController::class,'index'])->name('admin.menus.list');
+            Route::get('edit/{menu}', [MenuController::class, 'show']);
+            Route::post('edit/{menu}', [MenuController::class, 'update']);
+            Route::DELETE('destroy', [MenuController::class,'destroy']);
         });
     });
-    
+
 });

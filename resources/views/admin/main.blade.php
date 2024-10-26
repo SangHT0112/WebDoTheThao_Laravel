@@ -17,7 +17,7 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
-     
+
     </ul>
 
     <!-- Right navbar links -->
@@ -44,9 +44,9 @@
         </div>
       </li>
 
-    
-     
-      
+
+
+
       <li class="nav-item">
         <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
           <i class="fas fa-th-large"></i>
@@ -73,7 +73,7 @@
               <div class="card-header">
                 <h3 class="card-title">{{$title}}</h3>
               </div>
-                
+
                 @yield('content')
 
             </div>
@@ -106,7 +106,7 @@
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-    @include('admin.footer')
+@include('admin.footer')
 
 </body>
 </html>

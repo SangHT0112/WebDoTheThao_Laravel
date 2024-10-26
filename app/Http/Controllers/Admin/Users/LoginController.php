@@ -8,21 +8,21 @@ class LoginController extends Controller
 {
     public function index(){
         return view("admin.users.login",[
-            'title' => 'Dang nhap'
+            'title' => 'Đăng nhập Admin'
         ]);
     }
 
     //Request de lay thong tin tu form
     public function store(Request $request){
         $request->validate([
-            'email' => 'required|email',
+            'email' => 'required|email:filter',
             'password' => 'required',
         ], [
             'email.required' => 'Vui lòng nhập địa chỉ email.',
             'email.email' => 'Địa chỉ email không đúng định dạng.',
             'password.required' => 'Vui lòng nhập mật khẩu.',
         ]);
-    
+
         // Xử lý đăng nhập sau khi xác thực thành công
 
         if(Auth::attempt([      //Auth::attempt nhận một mảng thông tin
