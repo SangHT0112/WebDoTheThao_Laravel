@@ -4,6 +4,8 @@ use App\Http\Controllers\Admin\MainController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\Users\LoginController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Services\UploadService;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +35,16 @@ Route::middleware(['auth'])->group(function () {
             Route::get('add', [MenuController::class,'create']);
             Route::post('add', [MenuController::class,'store']); // goi vao store
         });
+
+
+
+        #products
+        Route::prefix('products')->group(function(){
+            Route::get('add', [ProductController::class,'create']);
+        });
+
+        #upload
+        Route::post('upload/services',[UploadService::class,'store']);
     });
     
 });
