@@ -15,6 +15,6 @@ class UploadController extends Controller
     }
     public function store(request $request)
     {
-        
+        $this->upload->store($request);
     }
 }
