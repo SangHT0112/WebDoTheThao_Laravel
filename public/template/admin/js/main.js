@@ -27,11 +27,10 @@ function removeRow(id,url)
     }
 }
 
-
-/*Upload file */
-$('#upload').change(function (){
-    const  form=new FormData();
-    form.append('file',$(this)[0].files[0]);
+/*Upload File*/
+$('#upload').change(function () {
+    const form = new FormData();
+    form.append('file', $(this)[0].files[0]);
 
     $.ajax({
         processData: false,
@@ -39,9 +38,10 @@ $('#upload').change(function (){
         type: 'POST',
         dataType: 'JSON',
         data: form,
-        url:'/admin/upload/services',
-        success: function(results){
-            console.log(results);
+        url: '/admin/upload/services',
+        success: function (results) {
+            console.log(results)
         }
-    })
-})
+    });
+});
+

@@ -13,8 +13,8 @@ class UploadController extends Controller
     {
         $this->upload = $upload;
     }
-    public function store(Request $request)
+    public function store(request $request)
     {
-
+        $this->upload->store($request);
     }
 }
