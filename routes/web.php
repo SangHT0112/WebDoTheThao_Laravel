@@ -48,7 +48,7 @@ Route::middleware(['auth'])->group(function () {
         });
 
         #upload
-        Route::post('upload/services',[UploadService::class,'store']);
+        Route::post('upload/services',[\App\Http\Controllers\Admin\UploadController::class,'store']);
     });
 
 });
