@@ -57,17 +57,38 @@
                   <p>Danh sách danh mục</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="../../index3.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v3</p>
-                </a>
-              </li>
+
             </ul>
           </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon"></i>
+                    <p>
+                        Sản phẩm
+                        <i class="fas fa-angle-left right"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('admin.products.add')  }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Thêm sản phẩm</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../forms/advanced.html" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Danh sách sản phẩm</p>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
 
         </ul>
       </nav>
+
+
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->

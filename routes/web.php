@@ -45,7 +45,7 @@ Route::middleware(['auth'])->group(function () {
 
         #products
         Route::prefix('products')->group(function(){
-            Route::get('add', [ProductController::class,'create']);
+            Route::get('add', [ProductController::class,'create'])->name('admin.products.add');
         });
 
         #upload
