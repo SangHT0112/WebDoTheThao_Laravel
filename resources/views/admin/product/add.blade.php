@@ -5,7 +5,8 @@
 @endsection
 
 @section('content')
-    <form action="" method="POST">
+    <form action="{{ route('admin.upload.store') }}" method="POST" enctype="multipart/form-data">   
+        @csrf
         <div class="card-body">
             <div class="row">
                 <div class="col-md-6">
@@ -20,6 +21,7 @@
                     <label>Danh Mục</label>
                     <select class="form-control" name="parent_id" id="parent_id">
                         <option value="0">Danh Mục Cha</option>
+                        
                     </select>
                 </div>
                 </div>
@@ -55,9 +57,9 @@
                 <label for="menu">Ảnh Sản Phẩm</label>
                 <input type="file"  class="form-control" id="upload">
                 <div id="image_show">
-
+            
                 </div>
-                <input type="hidden" name="thumb" id="thumb">
+                <input type="hidden" name="file" id="file">
             </div>
 
             <div class="form-group">

@@ -40,7 +40,16 @@ $('#upload').change(function () {
         data: form,
         url: '/admin/upload/services',
         success: function (results) {
-            console.log(results)
+            if (results.success) {
+                console.log('File uploaded successfully:', results.path);
+                // Có thể hiển thị hình ảnh vừa upload
+                $('#image-preview').attr('src', results.path);
+            } else {
+                console.error('Upload failed:', results.message);
+            }
+        },
+        error: function (xhr, status, error) {
+            console.error('An error occurred:', error);
         }
     });
 });

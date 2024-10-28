@@ -66,6 +66,31 @@
             </ul>
           </li>
 
+          <!-- Sản phẩm -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class=""></i>
+              <p>
+                Sản phẩm
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('admin.products.add')  }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm sản phẩm</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('admin.menus.list')  }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh sách sản phẩm</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

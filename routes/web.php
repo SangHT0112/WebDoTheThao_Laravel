@@ -45,11 +45,14 @@ Route::middleware(['auth'])->group(function () {
 
         #products
         Route::prefix('products')->group(function(){
-            Route::get('add', [ProductController::class,'create']);
+            Route::get('add', [ProductController::class,'create'])->name('admin.products.add');
         });
 
         #upload
         Route::post('upload/services',[UploadController::class,'store']);
+        Route::post('store', [UploadController::class, 'store'])->name('admin.upload.store');
+
+        
     });
 
 });
