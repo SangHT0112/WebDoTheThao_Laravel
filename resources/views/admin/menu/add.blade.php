@@ -32,11 +32,8 @@
         <textarea class="form-control" name="content" id="content" rows="5" placeholder="Enter content"></textarea>
     </div>
 
-    <div class="form-group">
-        <label for="menu">Ảnh sản phẩm</label>
-        <input type="file" name="file" class="form-control"></input>
-    </div>
-    
+
+
     <div class="form-group">
         <label for="">Kích Hoạt</label>
         <div class="form-check">
