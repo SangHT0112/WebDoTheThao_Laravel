@@ -27,7 +27,7 @@ function removeRow(id,url)
     }
 }
 
-/*Upload File*/
+/*Upload File */
 $('#upload').change(function () {
     const form = new FormData();
     form.append('file', $(this)[0].files[0]);
@@ -40,17 +40,16 @@ $('#upload').change(function () {
         data: form,
         url: '/admin/upload/services',
         success: function (results) {
-            if (results.success) {
-                console.log('File uploaded successfully:', results.path);
-                // Có thể hiển thị hình ảnh vừa upload
-                $('#image-preview').attr('src', results.path);
+            if (results.error === false) {
+                $('#image_show').html('<a href="' + results.url + '" target="_blank">' +
+                    '<img src="' + results.url + '" width="100px"></a>');
+
+                $('#thumb').val(results.url);
             } else {
-                console.error('Upload failed:', results.message);
+                alert('Upload File Lỗi');
             }
-        },
-        error: function (xhr, status, error) {
-            console.error('An error occurred:', error);
         }
     });
 });
+
 

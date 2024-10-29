@@ -37,6 +37,34 @@ class Helper
         return  $html;
     }
 
+    public static function product($products)
+    {
+        $html = '';
+        foreach ($products as $product) {
+            $html .= '
+            <tr>
+                <td>' . $product->id . '</td>
+                <td>' . $product->name . '</td>
+                <td>' . $product->menu->name . '</td> <!-- Truy cập danh mục -->
+                <td>' . number_format($product->price, 0, ',', '.') . ' VNĐ</td> <!-- Giá gốc -->
+                <td>' . number_format($product->price_sale, 0, ',', '.') . ' VNĐ</td> <!-- Giá sale -->
+                <td>' . self::active($product->active) . '</td>
+                <td>' . $product->updated_at->format('d/m/Y H:i') . '</td> <!-- Thời gian cập nhật -->
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/admin/products/edit/' . $product->id . '">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <a href="#" class="btn btn-danger btn-sm"
+                       onclick="removeRow(' . $product->id . ', \'/admin/products/destroy\')">
+                        <i class="fas fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+            ';
+        }
+        return $html;
+    }
+
 
     public static function active($active =0) : string
     {
