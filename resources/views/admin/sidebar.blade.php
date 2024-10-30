@@ -85,7 +85,29 @@
               </li>
             </ul>
           </li>
-
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class=""></i>
+                    <p>
+                        Sliders
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('admin.sliders.add')  }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Thêm Sliders</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.sliders.list')  }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Danh sách Sliders</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
         </ul>
       </nav>
 

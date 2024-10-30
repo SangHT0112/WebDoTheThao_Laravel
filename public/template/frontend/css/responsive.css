@@ -1,15 +1,15 @@
-/* lg */ 
+/* lg */
 @media (min-width: 1200px) {
 
 }
 
 /* md */
 @media (min-width: 992px) and (max-width: 1199px) {
- 
- 
+
+
 .usa{
 	margin-right: 0;
-} 
+}
 
 .shipping img{
 	width: 100%;
@@ -27,17 +27,17 @@
 	width: 65px;
 }
 
-#cart_items .cart_info .cart_description h4, 
+#cart_items .cart_info .cart_description h4,
 #cart_items .cart_info .cart_description p{
 	text-align: center;
-} 
+}
 
 }
 
 
 /* sm */
 @media (min-width: 768px) and (max-width: 991px) {
-   
+
 .shop-menu ul li a{
 	padding-left: 0;
 }
@@ -295,9 +295,9 @@ ul.sub-menu{
 	text-align: center;
 }
 
-.btn-group.pull-right, 
-.footer-bottom .pull-left, 
-.footer-bottom .pull-right, 
+.btn-group.pull-right,
+.footer-bottom .pull-left,
+.footer-bottom .pull-right,
 .mainmenu.pull-left,
 .media.commnets .pull-left,
 .media-list .pull-left{
@@ -362,6 +362,7 @@ ul.sub-menu{
 .mainmenu ul li a {
 	color: #FFF;
 	padding-bottom: 0;
+
 }
 
 .navbar-collapse.in{
@@ -389,12 +390,14 @@ ul.sub-menu{
 .mainmenu .navbar-nav li ul.sub-menu li{
 	background: transparent;
 	padding-bottom:0;
+
 }
 
 .nav.navbar-nav > li:hover > ul.sub-menu{
   -webkit-animation: none;
   -moz-animation: none;
   -ms-animation: none;
+
   -o-animation: none;
   animation: none;
   box-shadow: none;
