@@ -85,9 +85,9 @@ class Helper
                     </a>';
 
                 if(self::isChild($menus,$menu->id)){
-                    $html .='<ul role="menu" class="sub-menu">';
+                    $html .='<ul role="menu" class="sub-menu" >';
                     $html .='<li>';
-                    $html .= self::menus($menus,$menu->id);
+                    $html .=self::menus($menus,$menu->id);
                     $html .='</li>';
                     $html .='</ul>';
 
