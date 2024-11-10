@@ -1,4 +1,5 @@
-      <!-- Main Sidebar Container -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
+    <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="/admin" class="brand-link">
@@ -38,9 +39,9 @@
                with font-awesome or any other icon font library -->
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class=""></i>
-              <p>
-                Danh mục
+            <i class="fa-solid fa-bars"></i>
+              <p style="margin-left: 5px;">
+                Menu
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -48,13 +49,41 @@
               <li class="nav-item">
                 <a href="{{ route('admin.menus.add')  }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Thêm danh mục</p>
+                  <p>Thêm Menu</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('admin.menus.list')  }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Danh sách danh mục</p>
+                  <p>Danh Sách Menu</p>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+
+         
+          <!-- Thương Hiệu -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="fa fa-android"></i>
+                <p style="margin-left: 5px;">
+                  Thương Hiệu
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+              
+              <li class="nav-item">
+                <a href="{{ route('admin.menus.add')  }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm Thương Hiệu</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('admin.menus.list')  }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh Sách Thương Hiệu</p>
                 </a>
               </li>
 
@@ -63,31 +92,31 @@
 
           <!-- Sản phẩm -->
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class=""></i>
-              <p>
-                Sản phẩm
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{ route('admin.products.add')  }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Thêm sản phẩm</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('admin.products.list')  }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Danh sách sản phẩm</p>
-                </a>
-              </li>
-            </ul>
-          </li>
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-store-alt"></i>
+                        <p> Sản Phẩm
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/admin/products/add" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Thêm Sản Phẩm</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/products/list" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Danh Sách Sản Phẩm</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
             <li class="nav-item">
                 <a href="#" class="nav-link">
-                    <i class=""></i>
+                    <i class="nav-icon fas fa-images"></i>
                     <p>
                         Sliders
                         <i class="right fas fa-angle-left"></i>
@@ -103,7 +132,7 @@
                     <li class="nav-item">
                         <a href="{{ route('admin.sliders.list')  }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Danh sách Sliders</p>
+                            <p>Danh Sách Sliders</p>
                         </a>
                     </li>
                 </ul>

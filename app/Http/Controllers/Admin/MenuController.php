@@ -21,7 +21,7 @@ class   MenuController extends Controller
     public function create()
     {
         return view('admin.menu.add',[
-            'title' => 'Thêm danh mục',
+            'title' => 'Thêm Menu',
             'menus'=> $this->menuService->getParent()
         ]);
     }
@@ -37,7 +37,7 @@ class   MenuController extends Controller
     public function index()
     {
         return view('admin.menu.list',[
-            'title'=>'Danh sách Danh mục mới nhất',
+            'title'=>'Danh sách Menu mới nhất',
             'menus'=> $this->menuService->getAll()
         ]);
     }
@@ -45,7 +45,7 @@ class   MenuController extends Controller
     public function show(Menu $menu)
     {
         return view('admin.menu.edit',[
-            'title'=>'Chỉnh sửa danh mục: ' . $menu->name,
+            'title'=>'Chỉnh sửa menu: ' . $menu->name,
             'menu'=> $menu,
             'menus'=> $this->menuService->getParent()
         ]);
@@ -65,7 +65,7 @@ class   MenuController extends Controller
         if($result){
             return response()->json([
                     'error'=>false,
-                'message'=>'Xóa thành công danh mục !'
+                'message'=>'Xóa thành công menu !'
             ]);
         }
 

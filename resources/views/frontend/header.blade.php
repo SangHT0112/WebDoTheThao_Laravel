@@ -1,146 +1,108 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>{{$title}}</title>
-    <link href="/template/frontend/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/template/frontend/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/template/frontend/css/prettyPhoto.css" rel="stylesheet">
-    <link href="/template/frontend/css/price-range.css" rel="stylesheet">
-    <link href="/template/frontend/css/animate.css" rel="stylesheet">
-    <link href="/template/frontend/css/main.css" rel="stylesheet">
-    <link href="/template/frontend/css/responsive.css" rel="stylesheet">
-    <!--[if lt IE 9]>
-    <script src="/template/frontend/js/html5shiv.js"></script>
-    <script src="/template/frontend/js/respond.min.js"></script>
-    <![endif]-->
-    <link rel="shortcut icon" href="/template/frontend/images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/template/frontend/images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/template/frontend/images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/template/frontend/images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="/template/frontend/images/ico/apple-touch-icon-57-precomposed.png">
-</head><!--/head-->
+<header>
+		@php $menusHtml = \App\Helpers\Helper::menus($menus); @endphp
+		<!-- Header desktop -->
+		<div class="container-menu-desktop">
 
-<body>
-<header id="header"><!--header-->
-    <div class="header_top"><!--header_top-->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="contactinfo">
-                        <ul class="nav nav-pills">
-                            <li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-                            <li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="social-icons pull-right">
-                        <ul class="nav navbar-nav">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!--/header_top-->
+			<div class="wrap-menu-desktop">
+				<nav class="limiter-menu-desktop container">
+					
+					<!-- Logo desktop -->		
+					<a href="#" class="logo">
+						<img src="/template/frontend/images/icons/logo-01.png" alt="IMG-LOGO">
+					</a>
 
-    <div class="header-middle"><!--header-middle-->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="logo pull-left">
-                        <a href="index.html"><img src="images/home/logo.png" alt="" /></a>
-                    </div>
-                    <div class="btn-group pull-right">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                                USA
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Canada</a></li>
-                                <li><a href="#">UK</a></li>
-                            </ul>
-                        </div>
+					<!-- Menu desktop -->
+					<div class="menu-desktop">
+						<ul class="main-menu">
 
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                                DOLLAR
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Canadian Dollar</a></li>
-                                <li><a href="#">Pound</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-8">
-                    <div class="shop-menu pull-right">
-                        <ul class="nav navbar-nav">
-                            <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
-                            <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
-                            <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                            <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                            <li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!--/header-middle-->
+							<li class="active-menu"> <a href="/">Trang chu</a></li>
 
-    <div class="header-bottom"><!--header-bottom-->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-9">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-                    <div class="mainmenu pull-left">
-                        <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a href="{{route('home')}}" class="active">Home</a></li>
-                            {!! \App\Helpers\Helper::menus($menus) !!}
-                            <!--<li class="dropdown"><a href="#">Shop<i class=""></i></a>
-                                <ul role="menu" class="sub-menu">
-                                    <li><a href="shop.html">Products</a></li>
-                                    <li><a href="product-details.html">Product Details</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="cart.html">Cart</a></li>
-                                    <li><a href="login.html">Login</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
-                                <ul role="menu" class="sub-menu">
-                                    <li><a href="blog.html">Blog List</a></li>
-                                    <li><a href="blog-single.html">Blog Single</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="404.html">404</a></li>
-                            <li><a href="contact-us.html">Contact</a></li> -->
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="search_box pull-right">
-                        <input type="text" placeholder="Search"/>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!--/header-bottom-->
-</header><!--/header-->
-@yield('header')
+							{!! $menusHtml !!}
+
+							<li>
+								<a href="about.html">About</a>
+							</li>
+
+						</ul>
+					</div>	
+
+					<!-- Icon header -->
+					<div class="wrap-icon-header flex-w flex-r-m">
+						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
+							<i class="zmdi zmdi-search"></i>
+						</div>
+
+						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
+							<i class="zmdi zmdi-shopping-cart"></i>
+						</div>
+
+						<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
+							<i class="zmdi zmdi-favorite-outline"></i>
+						</a>
+					</div>
+				</nav>
+			</div>	
+		</div>
+
+		<!-- Header Mobile -->
+		<div class="wrap-header-mobile">
+			<!-- Logo moblie -->		
+			<div class="logo-mobile">
+				<a href="index.html"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
+			</div>
+
+			<!-- Icon header -->
+			<div class="wrap-icon-header flex-w flex-r-m m-r-15">
+				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
+					<i class="zmdi zmdi-search"></i>
+				</div>
+
+				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="2">
+					<i class="zmdi zmdi-shopping-cart"></i>
+				</div>
+
+				<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="0">
+					<i class="zmdi zmdi-favorite-outline"></i>
+				</a>
+			</div>
+
+			<!-- Button show menu -->
+			<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</div>
+		</div>
+
+
+		<!-- Menu Mobile -->
+		<div class="menu-mobile">
+
+			<ul class="main-menu-m">
+			<li class="active-menu"> <a href="/">Trang chu</a>
+			</li>
+
+				{!! $menusHtml !!}
+
+				<li>
+					<a href="about.html">About</a>
+				</li>
+			</ul>
+		</div>
+
+		<!-- Modal Search -->
+		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
+			<div class="container-search-header">
+				<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
+					<img src="images/icons/icon-close2.png" alt="CLOSE">
+				</button>
+
+				<form class="wrap-search-header flex-w p-l-15">
+					<button class="flex-c-m trans-04">
+						<i class="zmdi zmdi-search"></i>
+					</button>
+					<input class="plh3" type="text" name="search" placeholder="Search...">
+				</form>
+			</div>
+		</div>
+	</header>

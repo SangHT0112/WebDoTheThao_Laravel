@@ -8,14 +8,14 @@
 <form action="" method="POST">
 <div class="card-body">
     <div class="form-group">
-        <label for="menu">Tên Danh Mục</label>
+        <label for="menu">Tên Menu </label>
         <input type="text" class="form-control" name="name" id="name" placeholder="Enter name">
     </div>
 
     <div class="form-group">
         <label>Danh Mục</label>
         <select class="form-control" name="parent_id" id="parent_id">
-            <option value="0">Danh Mục Cha</option>
+            <option value="0">Menu Cha</option>
             @foreach($menus as $menu)
                 <option value="{{$menu->id}}">{{$menu->name}}</option>
             @endforeach
@@ -60,7 +60,7 @@
     <!-- /.card-body -->
 
     <div class="card-footer">
-        <button type="submit" class="btn btn-primary">Tạo Danh Mục</button>
+        <button type="submit" class="btn btn-primary">Tạo Menu</button>
     </div>
 
     @csrf

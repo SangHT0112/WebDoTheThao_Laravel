@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\MainController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\Users\LoginController;
 use App\Http\Controllers\frontend\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -42,6 +43,8 @@ Route::middleware(['auth'])->group(function () {
             Route::post('edit/{menu}', [MenuController::class, 'update']);
             Route::DELETE('destroy', [MenuController::class,'destroy']);
         });
+
+        #category
 
 
 

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('price');
             $table->integer('price_sale');
             $table->integer('active');
+            $table->string('thumb');
             $table->timestamps();
         });
     }

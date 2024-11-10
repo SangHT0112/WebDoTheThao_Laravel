@@ -24,7 +24,7 @@ class ProductRequest extends FormRequest
     {
         return [
             "name.required" => "Vui Lòng Nhập Tên Sản Phẩm",
-            "thumb.required" => "Ảnh Đại Diện không được trống"
+           "thumb.required" => "Ảnh Đại Diện không được trống"
         ];
     }
 }
