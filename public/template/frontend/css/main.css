@@ -2043,7 +2043,12 @@ input.num-product::-webkit-inner-spin-button {
 .block2-pic {
   position: relative;
 }
-
+.block2-pic img {
+  width: 100%; /* Đảm bảo hình ảnh chiếm hết chiều rộng của container */
+  height: 400px; /* Chiều cao cố định, có thể điều chỉnh theo ý bạn */
+  object-fit: cover; /* Giữ tỷ lệ hình ảnh, cắt phần thừa để vừa với khung */
+  border-radius: 8px; /* Tùy chỉnh bo góc nếu cần */
+}
 .block2-btn {
   position: absolute;
   bottom: -50px;
@@ -2066,6 +2071,33 @@ input.num-product::-webkit-inner-spin-button {
 
 .block2-txt-child2 {
   width: 30px;
+}
+
+
+/* Tiêu đề */
+h1, h2, h3, .block2-txt a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; /* In đậm */
+  color: #6C7AE0; /* Màu chữ tối, dễ đọc */
+  text-transform: uppercase; /* Chuyển đổi sang chữ hoa */
+  letter-spacing: 1px; /* Khoảng cách giữa các chữ */
+}
+
+/* Tên sản phẩm */
+.block2-txt a {
+  font-size: 1rem; /* Cỡ chữ vừa phải */
+  transition: color 0.3s ease; /* Hiệu ứng đổi màu mượt mà */
+}
+
+.block2-txt a:hover {
+  color: #0116b4; /* Màu nổi bật khi hover */
+}
+
+/* Đoạn văn */
+p, .block2-txt span {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem; /* Cỡ chữ nhỏ hơn tiêu đề */
+  color: #555; /* Màu chữ phụ trợ */
 }
 
 .btn-addwish-b2 .icon-heart2 {
