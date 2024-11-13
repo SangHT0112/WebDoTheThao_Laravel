@@ -43,9 +43,9 @@ class ProductController extends Controller
         return redirect()->back();
     }
 
-    
 
-    public function show(Product $product) //Dùng để edit 
+
+    public function show(Product $product) //Dùng để edit
     {
         return view('admin.product.edit',
         [

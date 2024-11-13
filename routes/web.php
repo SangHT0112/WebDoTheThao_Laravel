@@ -71,10 +71,10 @@ Route::middleware(['auth'])->group(function () {
         });
 
 
-
     });
 
 });
 
 Route::get('/',[HomeController::class,'index'])->name('home');
 Route::post('/services/load-product', [HomeController::class, 'loadProduct']);
+Route::get('danh-muc/{id}-{slug}.html',[App\Http\Controllers\frontend\MenuController::class,'index']);

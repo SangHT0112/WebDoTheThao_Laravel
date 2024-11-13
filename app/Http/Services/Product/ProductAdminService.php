@@ -66,14 +66,14 @@ class ProductAdminService
         // Cập nhật dữ liệu sản phẩm
         $product->fill($request->only(['name', 'menu_id', 'price', 'price_sale', 'active', 'description', 'content'])); // Chỉ lấy các trường cần thiết
         $product->save();
-        
+
         Session::flash('success', 'Cập nhật thành công sản phẩm');
     } catch (\Exception $err) {
         Session::flash('error', 'Có lỗi vui lòng thử lại');
         Log::error('Cập nhật sản phẩm lỗi: ' . $err->getMessage()); // Sử dụng Log đúng cách
         return false;
     }
-    
+
     return true;
 }
 
@@ -88,5 +88,5 @@ class ProductAdminService
         return false;
     }
 
-    
+
 }

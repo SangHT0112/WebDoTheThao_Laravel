@@ -48,7 +48,7 @@
 
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Returns 
+								Returns
 							</a>
 						</li>
 
@@ -202,7 +202,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 							</div>
 						</div>
 					</div>
-					
+
 					<div class="col-md-6 col-lg-5 p-b-30">
 						<div class="p-r-50 p-t-5 p-lr-0-lg">
 							<h4 class="mtext-105 cl2 js-name-detail p-b-14">
@@ -216,7 +216,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 							<p class="stext-102 cl3 p-t-23">
 								Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.
 							</p>
-							
+
 							<!--  -->
 							<div class="p-t-33">
 								<div class="flex-w flex-r-m p-b-10">
@@ -275,7 +275,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 											Add to cart
 										</button>
 									</div>
-								</div>	
+								</div>
 							</div>
 
 							<!--  -->
@@ -305,7 +305,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		</div>
 	</div>
 
-<!--===============================================================================================-->	
+<!--===============================================================================================-->
 	<script src="/template/frontend/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
 	<script src="/template/frontend/vendor/animsition/js/animsition.min.js"></script>
@@ -385,7 +385,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 				swal(nameProduct, "is added to cart !", "success");
 			});
 		});
-	
+
 	</script>
 <!--===============================================================================================-->
 	<script src="/template/frontend/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
