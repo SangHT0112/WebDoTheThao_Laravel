@@ -35,5 +35,10 @@
     </div>
 
     @endforeach
+        <style>
+            .hidden{
+                display: none;
+            }
+        </style>
 </div>
 
