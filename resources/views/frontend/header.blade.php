@@ -7,7 +7,7 @@
 				<nav class="limiter-menu-desktop container">
 
 					<!-- Logo desktop -->
-					<a href="#" class="logo">
+					<a href="/" class="logo">
 						<img src="/template/frontend/images/icons/logo-01.png" alt="IMG-LOGO">
 					</a>
 
@@ -15,7 +15,7 @@
 					<div class="menu-desktop">
 						<ul class="main-menu">
 
-							<li class="active-menu"> <a href="/">Trang chu</a></li>
+							<li class="active-menu"> <a href="/">Trang chủ</a></li>
 
 							{!! $menusHtml !!}
 
