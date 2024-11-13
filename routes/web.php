@@ -34,6 +34,10 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/', [MainController::class, 'index'])->name('admin');
         Route::get('main', [MainController::class, 'index']);
 
+        #config
+        Route::get('config', [\App\Http\Controllers\Admin\ConfigController::class, 'index'])->name('config');
+
+
         #menu
         Route::prefix('menus')->group(function(){
             Route::get('add', [MenuController::class,'create'])->name('admin.menus.add');

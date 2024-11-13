@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
@@ -37,6 +37,15 @@
 
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+            <li class="nav-item">
+                <a href="{{ route('config')  }}" class="nav-link">
+                    <i class="nav-icon fas fa-images"></i>
+                    <p>
+                        Chỉnh sửa hệ thống
+                    </p>
+                </a>
+
+            </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
             <i class="fa-solid fa-bars"></i>
@@ -62,7 +71,7 @@
             </ul>
           </li>
 
-         
+
           <!-- Thương Hiệu -->
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -73,7 +82,7 @@
                 </p>
             </a>
             <ul class="nav nav-treeview">
-              
+
               <li class="nav-item">
                 <a href="{{ route('admin.menus.add')  }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
