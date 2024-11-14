@@ -82,3 +82,4 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/',[HomeController::class,'index'])->name('home');
 Route::post('/services/load-product', [HomeController::class, 'loadProduct']);
 Route::get('danh-muc/{id}-{slug}.html',[App\Http\Controllers\frontend\MenuController::class,'index']);
+Route::get('san-pham/{id}-{slug}.html',[App\Http\Controllers\frontend\ProductController::class,'index']);
