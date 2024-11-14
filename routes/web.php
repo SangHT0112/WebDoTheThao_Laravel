@@ -36,6 +36,7 @@ Route::middleware(['auth'])->group(function () {
 
         #config
         Route::get('config', [\App\Http\Controllers\Admin\ConfigController::class, 'index'])->name('config');
+        Route::post('config', [\App\Http\Controllers\Admin\ConfigController::class, 'update'])->name('configupdate');
 
 
         #menu

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Services\Menu\MenuService;
 use App\Http\Services\Product\ProductService;
 use App\Http\Services\Slider\SliderService;
+use http\Encoding\Stream\Deflate;
 use Illuminate\Http\Request;
 
 
@@ -23,12 +24,14 @@ class HomeController extends Controller
     }
     public function index()
     {
+        $logo=session('logo');
         return view('frontend.home',[
 
             'title' => 'Shop-SP',
            'sliders' => $this->slider->show(),
            'menus'=>$this->menu->show(),
-           'products'=>$this->product->get()
+           'products'=>$this->product->get(),
+            'logo'=>$logo
         ]);
     }
 

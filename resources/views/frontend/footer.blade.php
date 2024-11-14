@@ -1,4 +1,10 @@
 	<!-- Footer -->
+    @php    use App\Http\Controllers\Controller;
+    use Illuminate\Http\Request;
+    use App\Models\Config;
+    $diachi =Config::where('status',1)->where('name','diachi')->first();
+        $email =Config::where('status',1)->where('name','email')->first();
+        $copyright =Config::where('status',1)->where('name','copyright')->first(); @endphp
 	<footer class="bg3 p-t-75 p-b-32">
 		<div class="container">
 			<div class="row">
@@ -72,7 +78,7 @@
 					</h4>
 
 					<p class="stext-107 cl7 size-201">
-						Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
+						{{$diachi->description}}
 					</p>
 
 					<div class="p-t-27">
@@ -97,15 +103,11 @@
 
 					<form>
 						<div class="wrap-input1 w-full p-b-4">
-							<input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email" placeholder="email@example.com">
+							{{@$email->description}}
 							<div class="focus-input1 trans-04"></div>
 						</div>
 
-						<div class="p-t-18">
-							<button class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
-								Subscribe
-							</button>
-						</div>
+
 					</form>
 				</div>
 			</div>
@@ -135,7 +137,7 @@
 
 				<p class="stext-107 cl6 txt-center">
 					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> &amp; distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+{{$copyright->description}}
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
 				</p>

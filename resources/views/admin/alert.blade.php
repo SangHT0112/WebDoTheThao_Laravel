@@ -12,8 +12,16 @@
     </div>
 @endif
 
+
 @if (Session::has('error'))
     <div class="alert alert-danger">
         {{ Session::get('error') }}
+    </div>
+@endif
+
+
+@if(session('flash_message'))
+    <div class="alert alert-{{ session('flash_level') }}">
+        {{ session('flash_message') }}
     </div>
 @endif

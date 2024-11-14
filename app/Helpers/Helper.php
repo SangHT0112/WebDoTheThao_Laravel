@@ -72,10 +72,10 @@ class Helper
         return $active == 0 ? '<span class="btn btn-danger btn-xs">NO</span>': '<span class="btn btn-success btn-xs">YES</span>';
     }
 
-    
+
     public static function menus($menus,$parent_id = 0)
     {
-        $menus = $menus->sortBy('id');  //sap xep 
+        $menus = $menus->sortBy('id');  //sap xep
 
         $html = '';
         foreach ($menus as $key=>$menu) {
