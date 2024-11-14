@@ -1,5 +1,13 @@
 <header>
-		@php $menusHtml = \App\Helpers\Helper::menus($menus); @endphp
+    @php
+    use App\Http\Controllers\Controller;
+    use Illuminate\Http\Request;
+    use App\Models\Config;
+		 $menusHtml = \App\Helpers\Helper::menus($menus);
+       $logo =Config::where('status',1)->where('name','logo')->first();
+       $favicon =Config::where('status',1)->where('name','favicon')->first();
+
+    @endphp
 		<!-- Header desktop -->
 		<div class="container-menu-desktop">
 
@@ -8,7 +16,7 @@
 
 					<!-- Logo desktop -->
 					<a href="/" class="logo">
-						<img src="/template/frontend/images/icons/logo-01.png" alt="IMG-LOGO">
+						<img src="{{url("template/frontend/images/".$logo->description)}}" alt="IMG-LOGO">
 					</a>
 
 					<!-- Menu desktop -->
