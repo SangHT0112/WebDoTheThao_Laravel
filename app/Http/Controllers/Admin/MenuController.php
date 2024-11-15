@@ -28,7 +28,7 @@ class   MenuController extends Controller
 
     public function store(CreateFormRequest $request)
     {
-       // dd($request->input());
+
         $this->menuService->create($request);
 
         return redirect()->back();
@@ -54,7 +54,6 @@ class   MenuController extends Controller
     public function update(Menu $menu, CreateFormRequest $request)
     {
         $this->menuService->update($request, $menu);
-
         return redirect('/admin/menus/list');
     }
 

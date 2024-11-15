@@ -26,8 +26,8 @@ class LoginController extends Controller
         // Xử lý đăng nhập sau khi xác thực thành công
 
         if(Auth::attempt([      //Auth::attempt nhận một mảng thông tin
-            'email'=> $request->input('email'),
-            'password' => $request->input('password')]))
+            'email'=> $request->email,
+            'password' => $request->password]))
         {
             return redirect() -> route('admin');
         }

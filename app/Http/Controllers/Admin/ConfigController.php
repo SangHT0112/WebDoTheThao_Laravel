@@ -15,7 +15,7 @@ class ConfigController extends Controller
         $diachi =Config::where('status',1)->where('name','diachi')->first();
         $email =Config::where('status',1)->where('name','email')->first();
         $copyright =Config::where('status',1)->where('name','copyright')->first();
-        session(['logo'=>$logo->description]);
+        session(['logo'=>$logo->description]); //ko can thiet
         return view('admin.config.add',[
             'title'=>'Config'
         ],compact('logo','favicon','diachi','email','copyright'));

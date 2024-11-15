@@ -24,15 +24,15 @@ use App\Http\Services\UploadService;
 
 Route::get('admin/users/login',[LoginController::class,'index'])->name('login');
 
-Route::post('admin/users/login/store',[LoginController::class,'store']);
+Route::post('admin/users/login',[LoginController::class,'store'])->name('login.store');
 
 
 
 Route::middleware(['auth'])->group(function () {
 
     Route::prefix('admin')->group(function(){
-        Route::get('/', [MainController::class, 'index'])->name('admin');
-        Route::get('main', [MainController::class, 'index']);
+
+        Route::get('/main', [MainController::class, 'index'])->name('admin');
 
         #config
         Route::get('config', [\App\Http\Controllers\Admin\ConfigController::class, 'index'])->name('config');
