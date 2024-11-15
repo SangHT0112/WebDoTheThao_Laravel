@@ -2,20 +2,28 @@
     <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="/admin" class="brand-link">
-      <img src="/template/admin/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
-    </a>
+
+    <div class="brand-link">
+        <a href="{{route('admin')}}">
+      <img src="/template/admin/dist/img/ps.png" alt="PS Logo" class="brand-image img-circle elevation-3" style="opacity: 1.8;width: 50px;position: relative;left: -10px">
+      <span class="brand-text font-weight-light" style="color: white">PS-Shop</span>
+      </a>
+    </div>
+
 
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+
         <div class="image">
-          <img src="/template/admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+            <a href="{{route('profile')}}" class="d-block">
+          <img src="/template/admin/dist/img/admin.jpg" class="img-circle elevation-2" alt="User Image">
+            </a>
         </div>
+
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="{{route('profile')}}" class="d-block">{{Auth::user()->name}}</a>
         </div>
       </div>
 
@@ -39,7 +47,7 @@
                with font-awesome or any other icon font library -->
             <li class="nav-item">
                 <a href="{{ route('config')  }}" class="nav-link">
-                    <i class="nav-icon fas fa-images"></i>
+                    <i class="fas fa-cog fa-fw"></i>
                     <p>
                         Chỉnh sửa hệ thống
                     </p>
@@ -72,32 +80,7 @@
           </li>
 
 
-          <!-- Thương Hiệu -->
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-                <i class="fa fa-android"></i>
-                <p style="margin-left: 5px;">
-                  Thương Hiệu
-                  <i class="right fas fa-angle-left"></i>
-                </p>
-            </a>
-            <ul class="nav nav-treeview">
 
-              <li class="nav-item">
-                <a href="{{ route('admin.menus.add')  }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Thêm Thương Hiệu</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('admin.menus.list')  }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Danh Sách Thương Hiệu</p>
-                </a>
-              </li>
-
-            </ul>
-          </li>
 
           <!-- Sản phẩm -->
           <li class="nav-item">
@@ -145,6 +128,15 @@
                         </a>
                     </li>
                 </ul>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('logout')  }}" class="nav-link">
+                    <i class="fa fa-sign-out" ></i>
+                    <p>
+                        Đăng xuất
+                    </p>
+                </a>
+
             </li>
         </ul>
       </nav>

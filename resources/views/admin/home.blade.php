@@ -1,4 +1,4 @@
 @extends('admin.main')
 @section('content')
-    Trang home
+    <img src="/template/admin/dist/img/adimhome.gif" alt="test" style="height: 600px">
 @endsection
