@@ -28,5 +28,9 @@
     .hidden{
         display: none;
     }
+
+</style>
+<style>
+
 </style>
   @yield('head')

@@ -25,36 +25,38 @@ class ConfigController extends Controller
     public function update(Request $request)
     {
         if($request->diachi=="" || $request->email=="" || $request->copyright==""){
-            return redirect('admin/config')->with(['flash_level' => 'danger','flash_message'=>'Vui long dien day du thong tin!']);
+            return redirect('admin/config')->with(['flash_level' => 'danger','flash_message'=>'Vui lòng điền đầy đủ thông tin
+!']);
         }
 
-        Config::where('status',1)->where('name','diachi')->update(['description'=>$request->diachi]);
-        Config::where('status',1)->where('name','email')->update(['description'=>$request->email]);
-        Config::where('status',1)->where('name','copyright')->update(['description'=>$request->copyright]);
+            Config::where('status', 1)->where('name', 'diachi')->update(['description' => $request->diachi]);
+            Config::where('status', 1)->where('name', 'email')->update(['description' => $request->email]);
+            Config::where('status', 1)->where('name', 'copyright')->update(['description' => $request->copyright]);
 
-        if(!empty($request->file('logo'))){
-            $logo = Config::where('status',1)->where('name','logo')->first();
-            $path='template/frontend/images/'.$logo->description;
-            if(file_exists($path)){
-                unlink($path);
+            if (!empty($request->file('logo'))) {
+                $logo = Config::where('status', 1)->where('name', 'logo')->first();
+                $path = 'template/frontend/images/' . $logo->description;
+                if (file_exists($path)) {
+                    unlink($path);
+                }
+                $newdescription = $request->file('logo')->getClientOriginalName();
+                $request->file('logo')->move('template/frontend/images/', $newdescription);
+                $logo->description = $newdescription;
+                $logo->save();
             }
-            $newdescription=$request->file('logo')->getClientOriginalName();
-            $request->file('logo')->move('template/frontend/images/',$newdescription);
-            $logo->description = $newdescription;
-            $logo->save();
-        }
 
-        if(!empty($request->file('favicon'))){
-            $favicon = Config::where('status',1)->where('name','favicon')->first();
-            $path='template/frontend/images/'.$favicon->description;
-            if(file_exists($path)){
-                unlink($path);
+            if (!empty($request->file('favicon'))) {
+                $favicon = Config::where('status', 1)->where('name', 'favicon')->first();
+                $path = 'template/frontend/images/' . $favicon->description;
+                if (file_exists($path)) {
+                    unlink($path);
+                }
+                $newdescription = $request->file('favicon')->getClientOriginalName();
+                $request->file('favicon')->move('template/frontend/images/', $newdescription);
+                $favicon->description = $newdescription;
+                $favicon->save();
             }
-            $newdescription=$request->file('favicon')->getClientOriginalName();
-            $request->file('favicon')->move('template/frontend/images/',$newdescription);
-            $favicon->description = $newdescription;
-            $favicon->save();
-        }
+        return redirect()->back()->with('success','Cập nhật thành công');
     }
 
 }

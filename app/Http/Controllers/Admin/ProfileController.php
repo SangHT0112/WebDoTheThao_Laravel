@@ -31,6 +31,7 @@ class ProfileController extends Controller
         if(isset($request->password)){
             User::where('id','1')->update(['password'=>bcrypt($request->password)]);
         }
-        return redirect()->back();
+        return redirect()->back()->with('success','Cập nhật thành công
+');
     }
 }
