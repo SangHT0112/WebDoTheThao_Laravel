@@ -14,7 +14,6 @@
                         <input type="text" name="name" value="{{ old('name') }}" class="form-control"  placeholder="Nhập tên sản phẩm">
                     </div>
                 </div>
-
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Danh Mục</label>

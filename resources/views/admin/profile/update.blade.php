@@ -46,7 +46,7 @@
                     <div class="form-group">
                         <label for="menu"> Mật khẩu
                         </label>
-                        <input type="text" name="password" value="" class="form-control" style="width: 1200px">
+                        <input type="password" name="password" value="" class="form-control" style="width: 1200px">
                         <i style="color: red;font-size: 12px">*Khi cần thay đổi mật khẩu thì hãy điền vào
                         </i>
                     </div>

@@ -50,7 +50,7 @@ Route::middleware(['auth'])->group(function () {
             Route::get('list', [MenuController::class,'index'])->name('admin.menus.list');
             Route::get('edit/{menu}', [MenuController::class, 'show']);
             Route::post('edit/{menu}', [MenuController::class, 'update']);
-            Route::DELETE('destroy', [MenuController::class,'destroy']);
+            Route::DELETE('destroy/{id}', [MenuController::class,'destroy'])->name('admin.menus.destroy');
         });
 
         #category

@@ -28,9 +28,7 @@ class   MenuController extends Controller
 
     public function store(CreateFormRequest $request)
     {
-
         $this->menuService->create($request);
-
         return redirect()->back();
     }
 
@@ -58,20 +56,16 @@ class   MenuController extends Controller
     }
 
 
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        $result=$this->menuService->destroy($request);
-        if($result){
-            return response()->json([
-                    'error'=>false,
-                'message'=>'Xóa thành công menu !'
-            ]);
+        $menu=Menu::find($id);
+        if($menu){
+            $menu->delete();
+            return redirect()->back();
         }
+        else{
 
-
-        return response()->json([
-            'error'=>true
-        ]);
+        }
     }
 
 
