@@ -21,7 +21,9 @@ use App\Http\Services\UploadService;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/admin', function () {
+    return redirect()->route('admin');
+});
 Route::get('admin/users/login',[LoginController::class,'index'])->name('login');
 
 Route::post('admin/users/login',[LoginController::class,'store'])->name('login.store');
