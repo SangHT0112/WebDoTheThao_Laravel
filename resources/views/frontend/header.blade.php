@@ -6,7 +6,6 @@
 		 $menusHtml = \App\Helpers\Helper::menus($menus);
        $logo =Config::where('status',1)->where('name','logo')->first();
        $favicon =Config::where('status',1)->where('name','favicon')->first();
-
     @endphp
 		<!-- Header desktop -->
 		<div class="container-menu-desktop">

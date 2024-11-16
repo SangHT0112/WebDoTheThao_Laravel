@@ -150,13 +150,27 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('logout')  }}" class="nav-link">
-                        <i class="fa fa-sign-out"></i>
+                    <a href="#" class="nav-link">
+                        <i class="fa-solid fa-newspaper"></i>
                         <p>
-                            Đăng xuất
+                            Tin tức
+                            <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
-
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.news.add')  }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Thêm Tin Tức</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.news.list')  }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Danh Sách Tin tức</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </nav>

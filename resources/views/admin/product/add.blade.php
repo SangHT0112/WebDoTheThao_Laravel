@@ -73,6 +73,11 @@
                 </div>
             </div>
 
+            <div class="form-group">
+                <label for="created_at">Ngày tạo</label>
+                <input type="datetime-local" class="form-control" name="created_at" id="created_at">
+            </div>
+
         </div>
 
         <div class="card-footer">

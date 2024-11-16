@@ -48,9 +48,9 @@ Route::middleware(['auth'])->group(function () {
             Route::get('add', [MenuController::class,'create'])->name('admin.menus.add');
             Route::post('add', [MenuController::class,'store']); // goi vao store
             Route::get('list', [MenuController::class,'index'])->name('admin.menus.list');
-            Route::get('edit/{menu}', [MenuController::class, 'show']);
+            Route::get('edit/{menu}', [MenuController::class, 'show'])->name('admin.menus.edit');
             Route::post('edit/{menu}', [MenuController::class, 'update']);
-            Route::DELETE('destroy/{id}', [MenuController::class,'destroy'])->name('admin.menus.destroy');
+            Route::get('destroy/{id}', [MenuController::class,'destroy'])->name('admin.menus.destroy');
         });
 
         #category
@@ -79,6 +79,12 @@ Route::middleware(['auth'])->group(function () {
             Route::DELETE('destroy', [SliderController::class, 'destroy']);
         });
 
+        #news
+        Route::prefix('news')->group(function(){
+            Route::get('add',[\App\Http\Controllers\Admin\NewController::class,'create'])->name('admin.news.add');
+            Route::get('list',[\App\Http\Controllers\Admin\NewController::class,'list'])->name('admin.news.list');
+        });
+
 
     });
 
@@ -86,5 +92,5 @@ Route::middleware(['auth'])->group(function () {
 
 Route::get('/',[HomeController::class,'index'])->name('home');
 Route::post('/services/load-product', [HomeController::class, 'loadProduct']);
-Route::get('danh-muc/{id}-{slug}.html',[App\Http\Controllers\frontend\MenuController::class,'index']);
+Route::get('danh-muc/{id}-{slug}.html',[App\Http\Controllers\frontend\MenuController::class,'index'])->name('danhmuc.sanpham');
 Route::get('san-pham/{id}-{slug}.html',[App\Http\Controllers\frontend\ProductController::class,'index']);

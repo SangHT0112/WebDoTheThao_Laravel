@@ -61,10 +61,10 @@ class   MenuController extends Controller
         $menu=Menu::find($id);
         if($menu){
             $menu->delete();
-            return redirect()->back();
+            return redirect()->back()->with('success','Xóa danh mục thành công');
         }
         else{
-
+            return redirect()->back()->with('error','Xóa danh mục không thành công');
         }
     }
 
