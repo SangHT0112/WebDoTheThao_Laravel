@@ -109,7 +109,7 @@
                                             </button>
                                             <input type="hidden" name="product_id" value="{{ $product->id }}">
                                         @endif
-                                        @csrf
+                                            @csrf
                                     </form>
                                 </div>
                             </div>

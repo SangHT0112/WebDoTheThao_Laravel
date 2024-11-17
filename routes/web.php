@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UploadController;
 use App\Http\Services\UploadService;
+use App\Http\Controllers\frontend\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,9 @@ use App\Http\Services\UploadService;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/admin', function () {
+    return redirect()->route('admin');
+});
 Route::get('admin/users/login',[LoginController::class,'index'])->name('login');
 Route::post('admin/users/login',[LoginController::class,'store'])->name('login.store');
 Route::get('admin/users/logout',[LoginController::class,'logout'])->name('logout');
@@ -97,3 +100,9 @@ Route::get('/',[HomeController::class,'index'])->name('home');
 Route::post('/services/load-product', [HomeController::class, 'loadProduct']);
 Route::get('danh-muc/{id}-{slug}.html',[App\Http\Controllers\frontend\MenuController::class,'index'])->name('danhmuc.sanpham');
 Route::get('san-pham/{id}-{slug}.html',[App\Http\Controllers\frontend\ProductController::class,'index']);
+
+Route::post('add-cart', [CartController::class, 'index']);
+Route::get('carts', [CartController::class, 'show']);
+Route::post('update-cart', [CartController::class, 'update']);
+Route::get('carts/delete/{id}', [CartController::class, 'remove']);
+Route::post('carts', [CartController::class, 'addCart']);
