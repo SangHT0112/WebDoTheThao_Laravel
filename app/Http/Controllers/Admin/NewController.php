@@ -84,12 +84,22 @@ class NewController extends Controller
             $nameimage = $request->file('image')->getClientOriginalName();
             $path='uploads/'.date("Y/m/d");
             $request->file('image')->storeAs('public/'.$path,$nameimage);
-            $id->update(["imgs"=>'storage/'.$path.'/'.$nameimage]);
+            $id->update(["imgs"=>$path.'/'.$nameimage]);
         }
 
         return redirect()->back()->with('success','Cập Nhật Tin Tức Thành Công');}
         catch (\Exception $exception){
             return redirect()->back()->with('erorr','Cập Nhật Tin Tức Không Thành Công');
         }
+    }
+
+    public function destroy(News $id)
+    {
+        if($id) {
+            $id->delete();
+            return redirect()->back()->with('success',"Xóa Tin Tức Thành Công!");
+        }
+        else
+            return redirect()->back()->with('error',"Xóa Tin Tức Không Thành Công!");
     }
 }

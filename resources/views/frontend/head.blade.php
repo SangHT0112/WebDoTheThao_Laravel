@@ -1,6 +1,7 @@
 
 	<title>{{$title}}</title>
 	<meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
 	<link rel="icon" type="image/png" href="/template/frontend/images/icons/favicon.png"/>
@@ -32,4 +33,47 @@
 	<link rel="stylesheet" type="text/css" href="/template/frontend/css/util.css">
 	<link rel="stylesheet" type="text/css" href="/template/frontend/css/main.css">
 <!--===============================================================================================-->
+    <style>body {
+            font-family: 'Roboto', sans-serif; /* Áp dụng font Roboto cho toàn bộ trang */
+            line-height: 1.6; /* Điều chỉnh khoảng cách dòng */
+            letter-spacing: 0.5px; /* Điều chỉnh khoảng cách giữa các chữ */
+            font-size: 16px; /* Điều chỉnh kích thước chữ cho dễ đọc */
+            color: #333; /* Màu chữ mặc định */
+        }
+
+        /* Cập nhật cho các tiêu đề */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500; /* Đảm bảo tiêu đề nổi bật */
+            margin-bottom: 15px; /* Khoảng cách dưới tiêu đề */
+            color: #222; /* Màu chữ tối cho tiêu đề */
+        }
+
+        /* Cập nhật cho các đoạn văn bản */
+        p, .description, .content {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400; /* Font nhẹ cho văn bản */
+            color: #555; /* Màu chữ cho văn bản */
+            line-height: 1.8; /* Điều chỉnh khoảng cách dòng cho dễ đọc */
+        }
+
+        /* Cập nhật cho các phần tử khác */
+        a, .link {
+            font-family: 'Roboto', sans-serif;
+            text-decoration: none;
+            color: #007bff;
+        }
+
+
+
+        /* Cập nhật các phần tử có class `.ltext` nếu cần */
+        .ltext-101, .ltext-102, .ltext-103 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+        }
+
+        /* Đảm bảo rằng các phần tử trong giao diện người dùng (UI) đều sử dụng font chữ đồng nhất */
+        input, textarea, select {
+            font-family: 'Roboto', sans-serif;
+        }</style>
 <meta name="csrf-token" content="{{ csrf_token() }}">
