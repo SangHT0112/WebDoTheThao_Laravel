@@ -36,8 +36,21 @@
                     @endif
                 </td>
                 <td>
-                    <a class="btn btn-primary btn-sm" href="{{route('admin.news.edit',['id'=>$news->id])}}"><i class="fas fa-edit"></i></a>
-                    <a class="btn btn-danger btn-sm" href="" ><i class="fas fa-trash"></i></a>
+                    <div class="d-flex justify-content-start">
+
+                        <a class="btn btn-primary btn-sm" href="{{ route('admin.news.edit', ['id' => $news->id]) }}">
+                            <i class="fas fa-edit"></i>
+                        </a>
+
+                        <form action="{{ route('admin.news.destroy', $news->id) }}" method="POST" style="margin-left: 5px;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </form>
+                    </div>
+
 
 
                 </td>

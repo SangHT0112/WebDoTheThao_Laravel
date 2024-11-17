@@ -7,6 +7,7 @@ use App\Http\Services\Menu\MenuService;
 use App\Http\Services\Product\ProductService;
 use App\Http\Services\Slider\SliderService;
 use App\Models\Menu;
+use App\Models\News;
 use http\Encoding\Stream\Deflate;
 use Illuminate\Http\Request;
 
@@ -26,6 +27,7 @@ class HomeController extends Controller
     public function index()
     {
         $logo=session('logo');/*test*/
+        $news=News::get();
 
         return view('frontend.home',[
 
@@ -34,7 +36,7 @@ class HomeController extends Controller
            'menus'=>$this->menu->show(),
            'products'=>$this->product->get(),
             'logo'=>$logo,
-
+            'news'=>$news
         ]);
     }
 

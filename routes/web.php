@@ -89,6 +89,7 @@ Route::middleware(['auth'])->group(function () {
             Route::get('list',[\App\Http\Controllers\Admin\NewController::class,'list'])->name('admin.news.list');
             Route::get('edit/{id}',[\App\Http\Controllers\Admin\NewController::class,'edit'])->name('admin.news.edit');
             Route::post('edit/{id}',[\App\Http\Controllers\Admin\NewController::class,'update'])->name('admin.news.update');
+            Route::DELETE('destroy/{id}',[\App\Http\Controllers\Admin\NewController::class,'destroy'])->name('admin.news.destroy');
         });
 
         #Cart

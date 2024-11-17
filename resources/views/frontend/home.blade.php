@@ -79,39 +79,30 @@
     <div class="sec-news bg0 p-t-50 p-b-50">
         <div class="container">
             <div class="row">
-                <!-- Tin Tức 1 -->
+                <!-- Tin Tức  -->
+                @foreach($news as $new)
                 <div class="col-md-6 p-b-30">
                     <div class="block-news wrap-pic-w">
-                        <img src="/template/frontend/images/9f8f4aee88744f866a20e2d0fe1ed2de.jpg" alt="news image">
-                        <a href="#" class="block-news-txt">
+                        <a href="{{asset('storage/'.$new->imgs)}}" class="block-news-txt">
+                        <img src="{{asset('storage/'.$new->imgs)}}" alt="news image">
+                        </a>
                             <div class="block-news-title">
-                                <h4 class="ltext-103 cl5">TEst</h4>
+                                <br>
+                                <h4 class="ltext-103 cl5">{{$new->title}}</h4>
                             </div>
                             <div class="block-news-desc">
-                                <p class="stext-102 cl6">TEst12</p>
+                                <p class="stext-102 cl6">{{$new->description}}</p>
                             </div>
-                        </a>
+
                     </div>
                 </div>
 
-                <!-- Tin Tức 2 -->
-                <div class="col-md-6 p-b-30">
-                    <div class="block-news wrap-pic-w">
-                        <img src="/template/frontend/images/9f8f4aee88744f866a20e2d0fe1ed2de.jpg" alt="news image">
-                        <a href="#" class="block-news-txt">
-                            <div class="block-news-title">
-                                <h4 class="ltext-103 cl5">TETSTST</h4>
-                            </div>
-                            <div class="block-news-desc">
-                                <p class="stext-102 cl6">TÉTTS</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
     </div>
-
+    <div class="divider" style="border-top: 2px solid #ccc; margin: 20px 0;"></div>
     <!-- Product -->
     <section class="bg0 p-t-23 p-b-140">
         <div class="container">
@@ -140,6 +131,39 @@
                 <a onclick="loadMore()" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
                     Xem Thêm Sản Phẩm
                 </a>
+            </div>
+            <div class="divider" style="border-top: 2px solid #ccc; margin: 20px 0;"></div>
+
+            <!-- Thông tin bổ sung dưới Load More với màu nền vàng ngà -->
+            <div class="flex-w w-full p-t-45 bg-light-yellow">
+                <div class="col-md-3 p-b-30">
+                    <div class="flex-c-m stext-101 cl5">
+                        <!-- Hình ảnh minh họa cho Hoàn trả miễn phí -->
+                        <img src="/template/frontend/images/iconproductreturn.png" alt="Hoàn trả miễn phí" style="width: 50px; margin-right: 10px;">
+                        <span>Hoàn trả miễn phí</span>
+                    </div>
+                </div>
+                <div class="col-md-3 p-b-30">
+                    <div class="flex-c-m stext-101 cl5">
+                        <!-- Hình ảnh minh họa cho Giao hàng nhanh -->
+                        <img src="/template/frontend/images/producticon.png" alt="Giao hàng nhanh" style="width: 50px; margin-right: 10px;">
+                        <span>Giao hàng nhanh</span>
+                    </div>
+                </div>
+                <div class="col-md-3 p-b-30">
+                    <div class="flex-c-m stext-101 cl5">
+                        <!-- Hình ảnh minh họa cho Hỗ trợ nhanh chóng -->
+                        <img src="/template/frontend/images/iconsupport.png" alt="Hỗ trợ nhanh chóng" style="width: 50px; margin-right: 10px;">
+                        <span>Hỗ trợ nhanh chóng</span>
+                    </div>
+                </div>
+                <div class="col-md-3 p-b-30">
+                    <div class="flex-c-m stext-101 cl5">
+                        <!-- Hình ảnh minh họa cho Thanh toán đa dạng -->
+                        <img src="/template/frontend/images/iconcreditcard.png" alt="Thanh toán đa dạng" style="width: 50px; margin-right: 10px;">
+                        <span>Thanh toán đa dạng</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

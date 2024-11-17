@@ -89,9 +89,14 @@
 
 @section('footer')
     <script>
-        CKEDITOR.replace('content');
+        ClassicEditor
+            .create(document.querySelector('#content'))
+            .catch(error => {
+                console.error(error);
+            });
     </script>
-            <script>
+
+    <script>
             document.getElementById('upload').onchange = function () {
             const reader = new FileReader();
             reader.onload = function (e) {
