@@ -82,7 +82,10 @@ Route::middleware(['auth'])->group(function () {
         #news
         Route::prefix('news')->group(function(){
             Route::get('add',[\App\Http\Controllers\Admin\NewController::class,'create'])->name('admin.news.add');
+            Route::post('add',[\App\Http\Controllers\Admin\NewController::class,'postCreate'])->name('admin.news.postCreate');
             Route::get('list',[\App\Http\Controllers\Admin\NewController::class,'list'])->name('admin.news.list');
+            Route::get('edit/{id}',[\App\Http\Controllers\Admin\NewController::class,'edit'])->name('admin.news.edit');
+            Route::post('edit/{id}',[\App\Http\Controllers\Admin\NewController::class,'update'])->name('admin.news.update');
         });
 
 
