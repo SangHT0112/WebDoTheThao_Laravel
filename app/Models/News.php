@@ -10,12 +10,9 @@ class News extends Model
     use HasFactory;
     public $table = 'news';
     public $fillable=[
-        "id",
         "status",
         "title",
         "description",
-        "imgs",
-        "created_at",
-        "updated_at"
+        "imgs"
     ];
 }

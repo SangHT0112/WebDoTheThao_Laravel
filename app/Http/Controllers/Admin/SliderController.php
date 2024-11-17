@@ -30,7 +30,6 @@ class SliderController extends Controller
             'thumb' => 'required',
             'url'   => 'required'
         ]);
-
         $this->slider->insert($request);
 
         return redirect()->back();
@@ -43,7 +42,6 @@ class SliderController extends Controller
             'sliders' => $this->slider->get()
         ]);
     }
-
     public function show(Slider $slider)
     {
         return view('admin.slider.edit', [
