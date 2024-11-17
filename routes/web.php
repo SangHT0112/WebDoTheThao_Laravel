@@ -91,6 +91,10 @@ Route::middleware(['auth'])->group(function () {
             Route::post('edit/{id}',[\App\Http\Controllers\Admin\NewController::class,'update'])->name('admin.news.update');
         });
 
+        #Cart
+        Route::get('customers', [\App\Http\Controllers\Admin\CartController::class, 'index']);
+        Route::get('customers/view/{customer}', [\App\Http\Controllers\Admin\CartController::class, 'show']);
+
 
     });
 

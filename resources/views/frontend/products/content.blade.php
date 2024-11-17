@@ -105,7 +105,7 @@
 
                                             <button type="submit"
                                                     class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 ">
-                                                Add to cart
+                                                Thêm Giỏ Hàng
                                             </button>
                                             <input type="hidden" name="product_id" value="{{ $product->id }}">
                                         @endif
@@ -150,7 +150,7 @@
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item p-b-10">
-                            <a class="nav-link active" data-toggle="tab" href="#description" role="tab">Description</a>
+                            <a class="nav-link active" data-toggle="tab" href="#description" role="tab">Mô Tả Sản Phẩm</a>
                         </li>
 
                     </ul>
@@ -173,7 +173,7 @@
         <div class="bg6 flex-c-m flex-w size-302 m-t-73 p-tb-15">
 
             <span class="stext-107 cl6 p-lr-25">
-				Categories: {{ $product->menu->name }}
+				Loại Sản Phẩm: {{ $product->menu->name }}
 			</span>
         </div>
     </section>
