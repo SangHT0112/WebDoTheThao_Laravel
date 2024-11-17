@@ -80,6 +80,10 @@
                     <label for="no_active" class="custom-control-label">Không</label>
                 </div>
             </div>
+            <div class="form-group">
+                <label for="updated_at">Ngày Cập Nhật</label>
+                <input type="datetime-local" class="form-control" name="updated_at" id="updated_at">
+            </div>
 
         </div>
 

@@ -15,7 +15,48 @@
     </thead>
 
     <tbody>
-        {!! \App\Helpers\Helper::menu($menus) !!}
+
+    @foreach($menus as $k=>$menu)
+        @if($menu->parent_id==0)
+            <tr>
+                <td>{{$menu->id}}</td>
+                <td>{{$menu->name}}</td>
+                <td>@if($menu->active==1)
+                        <span class="btn btn-success btn-xs">YES</span>
+                    @else <span class="btn btn-danger btn-xs">NO</span>
+                    @endif
+                </td>
+                <td>{{$menu->updated_at}}</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="{{route('admin.menus.edit',$menu->id)}}"><i class="fas fa-edit"></i></a>
+                    <a class="btn btn-danger btn-sm" href="{{route('admin.menus.destroy',$menu->id)}}" ><i class="fas fa-trash"></i></a>
+
+
+                </td>
+
+            </tr>
+        @endif
+        @if($menu->parent_id!=0)
+            <tr>
+                <td>--{{$menu->id}}</td>
+                <td>{{$menu->name}}</td>
+                <td>@if($menu->active==1)
+                        <span class="btn btn-success btn-xs">YES</span>
+                    @else <span class="btn btn-danger btn-xs">NO</span>
+                    @endif
+                </td>
+                <td>{{$menu->updated_at}}</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="{{route('admin.menus.edit',$menu->id)}}"><i class="fas fa-edit"></i></a>
+                    <a class="btn btn-danger btn-sm" href="{{route('admin.menus.destroy',$menu->id)}}" ><i class="fas fa-trash"></i></a>
+
+                </td>
+
+            </tr>
+        @endif
+
+
+    @endforeach
     </tbody>
 </table>
 

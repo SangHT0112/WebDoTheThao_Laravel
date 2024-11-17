@@ -35,14 +35,14 @@
 
 
     <div class="form-group">
-        <label for="">Kích Hoạt</label>
-        <div class="form-check">
-            <input class="form-check-input" value="1" type="radio" id="active" name="active" checked="">
-            <label for="active" class="form-check-label">Có</label>
+        <label>Kích Hoạt</label>
+        <div class="custom-control custom-radio">
+            <input class="custom-control-input" value="1" type="radio" id="active" name="active" checked="">
+            <label for="active" class="custom-control-label">Có</label>
         </div>
-        <div class="form-check">
-            <input class="form-check-input" value="0" type="radio" id="no_active" name="active" checked="">
-            <label for="no_active" class="form-check-label">Không</label>
+        <div class="custom-control custom-radio">
+            <input class="custom-control-input" value="0" type="radio" id="no_active" name="active" >
+            <label for="no_active" class="custom-control-label">Không</label>
         </div>
     </div>
 
@@ -51,10 +51,7 @@
         <input type="datetime-local" class="form-control" name="created_at" id="created_at">
     </div>
 
-    <div class="form-group">
-        <label for="updated_at">Ngày Cập Nhật</label>
-        <input type="datetime-local" class="form-control" name="updated_at" id="updated_at">
-    </div>
+
 </div>
 
     <!-- /.card-body -->

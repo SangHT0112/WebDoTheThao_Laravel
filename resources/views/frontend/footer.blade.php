@@ -2,142 +2,130 @@
     @php    use App\Http\Controllers\Controller;
     use Illuminate\Http\Request;
     use App\Models\Config;
+    use App\Models\Menu;
     $diachi =Config::where('status',1)->where('name','diachi')->first();
         $email =Config::where('status',1)->where('name','email')->first();
-        $copyright =Config::where('status',1)->where('name','copyright')->first(); @endphp
-	<footer class="bg3 p-t-75 p-b-32">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						Categories
-					</h4>
+        $copyright =Config::where('status',1)->where('name','copyright')->first();
+        $menufooter=Menu::select('id','name')->where('parent_id','0')->limit(4)->get();
+    @endphp
+    <footer class="bg3 p-t-75 p-b-32">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-lg-3 p-b-50">
+                    <h4 class="stext-301 cl0 p-b-30">
+                        Categories
+                    </h4>
+                    <ul>
+                        @foreach($menufooter as $menufooters)
 
-					<ul>
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Women
-							</a>
-						</li>
+                            <li class="p-b-10">
+                                <a href="{{route('danhmuc.sanpham',['id'=>$menufooters->id,'slug'=>Str::slug($menufooters->name, '-')])}}"
+                                   class="stext-107 cl7 hov-cl1 trans-04">
+                                    {{$menufooters->name}}
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
 
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Men
-							</a>
-						</li>
+                <div class="col-sm-6 col-lg-3 p-b-50">
+                    <h4 class="stext-301 cl0 p-b-30">
+                        Help
+                    </h4>
 
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Shoes
-							</a>
-						</li>
+                    <ul>
+                        <li class="p-b-10">
+                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                                Track Order
+                            </a>
+                        </li>
 
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Watches
-							</a>
-						</li>
-					</ul>
-				</div>
+                        <li class="p-b-10">
+                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                                Returns
+                            </a>
+                        </li>
 
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						Help
-					</h4>
+                        <li class="p-b-10">
+                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                                Shipping
+                            </a>
+                        </li>
 
-					<ul>
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Track Order
-							</a>
-						</li>
+                        <li class="p-b-10">
+                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                                FAQs
+                            </a>
+                        </li>
+                    </ul>
+                </div>
 
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Returns
-							</a>
-						</li>
+                <div class="col-sm-6 col-lg-3 p-b-50">
+                    <h4 class="stext-301 cl0 p-b-30">
+                        GET IN TOUCH
+                    </h4>
 
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Shipping
-							</a>
-						</li>
+                    <p class="stext-107 cl7 size-201">
+                        {{$diachi->description}}
+                    </p>
 
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								FAQs
-							</a>
-						</li>
-					</ul>
-				</div>
+                    <div class="p-t-27">
+                        <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+                            <i class="fa fa-facebook"></i>
+                        </a>
 
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						GET IN TOUCH
-					</h4>
+                        <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+                            <i class="fa fa-instagram"></i>
+                        </a>
 
-					<p class="stext-107 cl7 size-201">
-						{{$diachi->description}}
-					</p>
+                        <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+                            <i class="fa fa-pinterest-p"></i>
+                        </a>
+                    </div>
+                </div>
 
-					<div class="p-t-27">
-						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-							<i class="fa fa-facebook"></i>
-						</a>
+                <div class="col-sm-6 col-lg-3 p-b-50">
+                    <h4 class="stext-301 cl0 p-b-30">
+                        Newsletter
+                    </h4>
 
-						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-							<i class="fa fa-instagram"></i>
-						</a>
-
-						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-							<i class="fa fa-pinterest-p"></i>
-						</a>
-					</div>
-				</div>
-
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						Newsletter
-					</h4>
-
-					<form>
-						<div class="wrap-input1 w-full p-b-4">
-							{{@$email->description}}
-							<div class="focus-input1 trans-04"></div>
-						</div>
+                    <form>
+                        <div class="wrap-input1 w-full p-b-4">
+                            {{@$email->description}}
+                            <div class="focus-input1 trans-04"></div>
+                        </div>
 
 
-					</form>
-				</div>
-			</div>
+                    </form>
+                </div>
+            </div>
 
-			<div class="p-t-40">
-				<div class="flex-c-m flex-w p-b-18">
-					<a href="#" class="m-all-1">
-						<img src="/template/frontend/images/icons/icon-pay-01.png" alt="ICON-PAY">
-					</a>
+            <div class="p-t-40">
+                <div class="flex-c-m flex-w p-b-18">
+                    <a href="#" class="m-all-1">
+                        <img src="/template/frontend/images/icons/icon-pay-01.png" alt="ICON-PAY">
+                    </a>
 
-					<a href="#" class="m-all-1">
-						<img src="/template/frontend/images/icons/icon-pay-02.png" alt="ICON-PAY">
-					</a>
+                    <a href="#" class="m-all-1">
+                        <img src="/template/frontend/images/icons/icon-pay-02.png" alt="ICON-PAY">
+                    </a>
 
-					<a href="#" class="m-all-1">
-						<img src="/template/frontend/images/icons/icon-pay-03.png" alt="ICON-PAY">
-					</a>
+                    <a href="#" class="m-all-1">
+                        <img src="/template/frontend/images/icons/icon-pay-03.png" alt="ICON-PAY">
+                    </a>
 
-					<a href="#" class="m-all-1">
-						<img src="/template/frontend/images/icons/icon-pay-04.png" alt="ICON-PAY">
-					</a>
+                    <a href="#" class="m-all-1">
+                        <img src="/template/frontend/images/icons/icon-pay-04.png" alt="ICON-PAY">
+                    </a>
 
-					<a href="#" class="m-all-1">
-						<img src="/template/frontend/images/icons/icon-pay-05.png" alt="ICON-PAY">
-					</a>
-				</div>
+                    <a href="#" class="m-all-1">
+                        <img src="/template/frontend/images/icons/icon-pay-05.png" alt="ICON-PAY">
+                    </a>
+                </div>
 
-				<p class="stext-107 cl6 txt-center">
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-{{$copyright->description}}
+                <p class="stext-107 cl6 txt-center">
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    {{$copyright->description}}
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
 				</p>
@@ -173,7 +161,7 @@
 								<div class="slick3 gallery-lb">
 									<div class="item-slick3" data-thumb="images/product-detail-01.jpg">
 										<div class="wrap-pic-w pos-relative">
-											<img src="images/product-detail-01.jpg" alt="IMG-PRODUCT">
+											<img src="images/product-detail-01.jpgges/product-detail-01.jpg" alt="IMG-PRODUCT">
 
 											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-01.jpg">
 												<i class="fa fa-expand"></i>

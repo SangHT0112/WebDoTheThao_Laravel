@@ -35,4 +35,5 @@
         });
     </script> <!--end::OverlayScrollbars Configure--> <!--end::Script-->
     <script src="/template/admin/js/main.js"></script>
+
     @yield('footer')

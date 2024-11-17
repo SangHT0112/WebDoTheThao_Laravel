@@ -5,7 +5,7 @@ namespace App\Helpers;
 use Illuminate\Support\Str;
 class Helper
 {
-    public static function menu($menus, $parent_id = 0, $char = '')
+    /*public static function menu($menus, $parent_id = 0, $char = '')
     {
         $html = '';
         foreach ($menus as $key => $menu) {
@@ -28,15 +28,13 @@ class Helper
                 </tr>
                 ';
 
-
-
                 unset($menus[$key]);
 
                 $html .= self::menu($menus, $menu->id, $char.'--');
             }
         }
         return  $html;
-    }
+    }Test cach khac */
 
     public static function product($products)
     {

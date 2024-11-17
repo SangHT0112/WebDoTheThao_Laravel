@@ -25,8 +25,8 @@ Route::get('/admin', function () {
     return redirect()->route('admin');
 });
 Route::get('admin/users/login',[LoginController::class,'index'])->name('login');
-
 Route::post('admin/users/login',[LoginController::class,'store'])->name('login.store');
+Route::get('admin/users/logout',[LoginController::class,'logout'])->name('logout');
 
 
 
@@ -34,11 +34,15 @@ Route::middleware(['auth'])->group(function () {
 
     Route::prefix('admin')->group(function(){
 
-        Route::get('/main', [MainController::class, 'index'])->name('admin');
+        Route::get('main', [MainController::class, 'index'])->name('admin');
 
         #config
         Route::get('config', [\App\Http\Controllers\Admin\ConfigController::class, 'index'])->name('config');
         Route::post('config', [\App\Http\Controllers\Admin\ConfigController::class, 'update'])->name('configupdate');
+
+        #profile
+        Route::get('profile',[\App\Http\Controllers\Admin\ProfileController::class, 'index'])->name('profile');
+        Route::post('profile',[\App\Http\Controllers\Admin\ProfileController::class, 'update'])->name('profileupdate');
 
 
         #menu
@@ -46,9 +50,9 @@ Route::middleware(['auth'])->group(function () {
             Route::get('add', [MenuController::class,'create'])->name('admin.menus.add');
             Route::post('add', [MenuController::class,'store']); // goi vao store
             Route::get('list', [MenuController::class,'index'])->name('admin.menus.list');
-            Route::get('edit/{menu}', [MenuController::class, 'show']);
+            Route::get('edit/{menu}', [MenuController::class, 'show'])->name('admin.menus.edit');
             Route::post('edit/{menu}', [MenuController::class, 'update']);
-            Route::DELETE('destroy', [MenuController::class,'destroy']);
+            Route::get('destroy/{id}', [MenuController::class,'destroy'])->name('admin.menus.destroy');
         });
 
         #category
@@ -77,6 +81,12 @@ Route::middleware(['auth'])->group(function () {
             Route::DELETE('destroy', [SliderController::class, 'destroy']);
         });
 
+        #news
+        Route::prefix('news')->group(function(){
+            Route::get('add',[\App\Http\Controllers\Admin\NewController::class,'create'])->name('admin.news.add');
+            Route::get('list',[\App\Http\Controllers\Admin\NewController::class,'list'])->name('admin.news.list');
+        });
+
 
     });
 
@@ -84,5 +94,5 @@ Route::middleware(['auth'])->group(function () {
 
 Route::get('/',[HomeController::class,'index'])->name('home');
 Route::post('/services/load-product', [HomeController::class, 'loadProduct']);
-Route::get('danh-muc/{id}-{slug}.html',[App\Http\Controllers\frontend\MenuController::class,'index']);
+Route::get('danh-muc/{id}-{slug}.html',[App\Http\Controllers\frontend\MenuController::class,'index'])->name('danhmuc.sanpham');
 Route::get('san-pham/{id}-{slug}.html',[App\Http\Controllers\frontend\ProductController::class,'index']);

@@ -11,20 +11,23 @@
                     <div class="item-slick1" style="background-image: url({{ $slider->thumb }});">
                         <div class="container h-full">
                             <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
-                                <div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
+                                <div class="layer-slick1 animated visible-false" data-appear="fadeInDown"
+                                     data-delay="0">
                             <span class="ltext-101 cl2 respon2">
-                                HOT 2021
+                                HOT 2024
                             </span>
                                 </div>
 
-                                <div class="layer-slick1 animated visible-false" data-appear="fadeInUp" data-delay="800">
+                                <div class="layer-slick1 animated visible-false" data-appear="fadeInUp"
+                                     data-delay="800">
                                     <h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
                                         {{ $slider->name }}
                                     </h2>
                                 </div>
 
                                 <div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
-                                    <a href="{{ $slider->url }}" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
+                                    <a href="{{ $slider->url }}"
+                                       class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
                                         Shop Now
                                     </a>
                                 </div>
@@ -41,20 +44,21 @@
     <div class="sec-banner bg0 p-t-80 p-b-50">
         <div class="container">
             <div class="row">
-                @foreach($menus as $menu)
+                @for($i=0;$i<3;$i++)
                     <div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
                         <!-- Block1 -->
                         <div class="block1 wrap-pic-w">
                             <img src="/template/frontend/images/banner-01.jpg" alt="IMG-BANNER">
 
-                            <a href="/danh-muc/{{ $menu->id }}-{{ \Str::slug($menu->name, '-') }}.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+                            <a href="/danh-muc/{{ $menus[$i]->id }}-{{ \Str::slug($menus[$i]->name, '-') }}.html"
+                               class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
                                 <div class="block1-txt-child1 flex-col-l">
                             <span class="block1-name ltext-102 trans-04 p-b-8">
-                                {{ $menu->name }}
+                                {{ $menus[$i]->name }}
                             </span>
 
                                     <span class="block1-info stext-102 trans-04">
-                                HOT 2021
+                                HOT 2024
                             </span>
                                 </div>
 
@@ -66,11 +70,47 @@
                             </a>
                         </div>
                     </div>
-                @endforeach
+                @endfor
             </div>
         </div>
     </div>
 
+    <!-- TIn tức-->
+    <div class="sec-news bg0 p-t-50 p-b-50">
+        <div class="container">
+            <div class="row">
+                <!-- Tin Tức 1 -->
+                <div class="col-md-6 p-b-30">
+                    <div class="block-news wrap-pic-w">
+                        <img src="/template/frontend/images/9f8f4aee88744f866a20e2d0fe1ed2de.jpg" alt="news image">
+                        <a href="#" class="block-news-txt">
+                            <div class="block-news-title">
+                                <h4 class="ltext-103 cl5">TEst</h4>
+                            </div>
+                            <div class="block-news-desc">
+                                <p class="stext-102 cl6">TEst12</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tin Tức 2 -->
+                <div class="col-md-6 p-b-30">
+                    <div class="block-news wrap-pic-w">
+                        <img src="/template/frontend/images/9f8f4aee88744f866a20e2d0fe1ed2de.jpg" alt="news image">
+                        <a href="#" class="block-news-txt">
+                            <div class="block-news-title">
+                                <h4 class="ltext-103 cl5">TETSTST</h4>
+                            </div>
+                            <div class="block-news-desc">
+                                <p class="stext-102 cl6">TÉTTS</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Product -->
     <section class="bg0 p-t-23 p-b-140">

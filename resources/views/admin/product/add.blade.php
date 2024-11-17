@@ -14,7 +14,6 @@
                         <input type="text" name="name" value="{{ old('name') }}" class="form-control"  placeholder="Nhập tên sản phẩm">
                     </div>
                 </div>
-
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Danh Mục</label>
@@ -72,6 +71,11 @@
                     <input class="custom-control-input" value="0" type="radio" id="no_active" name="active" >
                     <label for="no_active" class="custom-control-label">Không</label>
                 </div>
+            </div>
+
+            <div class="form-group">
+                <label for="created_at">Ngày tạo</label>
+                <input type="datetime-local" class="form-control" name="created_at" id="created_at">
             </div>
 
         </div>
