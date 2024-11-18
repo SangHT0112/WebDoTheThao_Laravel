@@ -29,18 +29,5 @@ class ProductController extends Controller
         ]);
     }
 
-    public function showQuickView($id)
-    {
-        $product = Product::find($id);
 
-    return response()->json([
-        'id' => $product->id,
-        'name' => $product->name,
-        'price' => $product->price,
-        'priceSale' => $product->priceSale,
-        'thumb' => $product->thumb,
-        'description' => $product->description,
-        'images' => $product->images, // nếu sản phẩm có nhiều ảnh
-    ]);
-    }
 }

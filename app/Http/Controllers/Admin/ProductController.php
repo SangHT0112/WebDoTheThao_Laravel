@@ -21,9 +21,10 @@ class ProductController extends Controller
 
     public function index()
     {
+        $products=Product::where('active','1')->paginate(15);
         return view("admin.product.list",[
             'title' => "Danh Sách Sản Phẩm Mới Nhất",
-            'products' => $this->productService->get()
+            'products' => $products
         ]);
     }
 
@@ -67,16 +68,24 @@ class ProductController extends Controller
         return redirect()->back();
     }
 
-    public function destroy(Request $request)
+    public function destroy(Product $id)
     {
-        $result = $this->productService->delete($request);
-        if($result){
-            return response()->json([
-                'error' => false,
-                "message" => 'Xóa Thành Công Sản Phẩm'
+        $id->delete();
+        return redirect()->back()->with('success','Xóa Sản Phẩm Thành Công!');
+    }
+
+    public function search(Request $request)
+    {
+        if(!empty($request->search)) {
+            $searchproducts = $request->search;
+            $searchs = Product::where('name', 'like', '%' . $searchproducts . '%')->paginate(15);
+            return view('admin.product.search', [
+                'search' => $searchs,
+                'title' => ' Danh Sách Tìm Kiếm'
             ]);
         }
-
-        return response()->json(['eror' => true]);
+        else{
+            return redirect()->route('admin.products.list');
+        }
     }
 }

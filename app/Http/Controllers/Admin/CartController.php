@@ -23,6 +23,7 @@ class CartController extends Controller
         ]);
     }
 
+
     public function show(Customer $customer)
     {
         $carts = $this->cart->getProductForCart($customer);

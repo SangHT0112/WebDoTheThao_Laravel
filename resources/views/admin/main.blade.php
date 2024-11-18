@@ -25,12 +25,15 @@
         </a>
       </li>
     </ul>
+
   </nav>
+
   <!-- /.navbar -->
 
     @include('admin.sidebar')
 
   <!-- Content Wrapper. Contains page content -->
+
   <div class="content-wrapper">
 
     <!-- Main content -->

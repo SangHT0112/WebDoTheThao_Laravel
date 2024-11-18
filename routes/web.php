@@ -56,8 +56,6 @@ Route::middleware(['auth'])->group(function () {
             Route::get('destroy/{id}', [MenuController::class,'destroy'])->name('admin.menus.destroy');
         });
 
-        #category
-
 
 
         #products
@@ -65,9 +63,12 @@ Route::middleware(['auth'])->group(function () {
             Route::get('add', [ProductController::class,'create'])->name('admin.products.add');
             Route::post('add', [ProductController::class, 'store']);
             Route::get('list', [ProductController::class, 'index'])->name('admin.products.list');
-            Route::get('edit/{product}', [ProductController::class, 'show']);
+            Route::get('edit/{product}', [ProductController::class, 'show'])->name('admin.products.edit');
             Route::post('edit/{product}', [ProductController::class, 'update']);
-            Route::DELETE('destroy', [ProductController::class, 'destroy']);
+            Route::DELETE('destroy/{id}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
+            Route::get('search', [ProductController::class, 'search'])->name('admin.products.search');
+            Route::post('search', [ProductController::class, 'search']);
+
         });
 
         #upload
@@ -80,6 +81,7 @@ Route::middleware(['auth'])->group(function () {
             Route::get('edit/{slider}', [SliderController::class, 'show']);
             Route::post('edit/{slider}', [SliderController::class, 'update']);
             Route::DELETE('destroy', [SliderController::class, 'destroy']);
+
         });
 
         #news
