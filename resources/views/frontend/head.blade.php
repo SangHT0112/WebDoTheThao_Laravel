@@ -76,4 +76,32 @@
         input, textarea, select {
             font-family: 'Roboto', sans-serif;
         }</style>
+    <script>// Hàm mở modal
+        function openModal(productId) {
+            var modal = document.getElementById('modal' + productId);
+            modal.style.display = 'block';
+        }
+
+        // Hàm đóng modal
+        function closeModal(productId) {
+            var modal = document.getElementById('modal' + productId);
+            modal.style.display = 'none';
+        }
+
+        // Khi người dùng nhấn vào một modal nào đó, sẽ gọi hàm openModal
+        document.querySelectorAll('.js-show-modal1').forEach(button => {
+            button.addEventListener('click', function() {
+                var productId = this.getAttribute('data-product-id');
+                openModal(productId);
+            });
+        });
+
+        // Khi người dùng nhấn vào nút đóng, sẽ gọi hàm closeModal
+        document.querySelectorAll('.js-hide-modal1').forEach(button => {
+            button.addEventListener('click', function() {
+                var productId = this.getAttribute('data-product-id');
+                closeModal(productId);
+            });
+        });
+    </script>
 <meta name="csrf-token" content="{{ csrf_token() }}">

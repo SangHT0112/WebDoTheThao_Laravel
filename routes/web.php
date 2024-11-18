@@ -106,6 +106,8 @@ Route::post('/services/load-product', [HomeController::class, 'loadProduct']);
 Route::get('danh-muc/{id}-{slug}.html',[App\Http\Controllers\frontend\MenuController::class,'index'])->name('danhmuc.sanpham');
 Route::get('san-pham/{id}-{slug}.html',[App\Http\Controllers\frontend\ProductController::class,'index']);
 
+
+
 Route::post('add-cart', [CartController::class, 'index']);
 Route::get('carts', [CartController::class, 'show']);
 Route::post('update-cart', [CartController::class, 'update']);
