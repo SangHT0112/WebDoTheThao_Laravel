@@ -5,6 +5,7 @@ use App\Http\Services\Product\ProductService;
 use App\Http\Controllers\Controller;
 use App\Http\Services\Menu\MenuService;
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 
 class ProductController extends Controller
@@ -26,5 +27,20 @@ class ProductController extends Controller
             'product' => $product,
             'products' => $productsMore
         ]);
+    }
+
+    public function showQuickView($id)
+    {
+        $product = Product::find($id);
+
+    return response()->json([
+        'id' => $product->id,
+        'name' => $product->name,
+        'price' => $product->price,
+        'priceSale' => $product->priceSale,
+        'thumb' => $product->thumb,
+        'description' => $product->description,
+        'images' => $product->images, // nếu sản phẩm có nhiều ảnh
+    ]);
     }
 }
