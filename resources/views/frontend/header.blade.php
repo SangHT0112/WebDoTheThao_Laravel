@@ -69,24 +69,30 @@
     <div class="wrap-header-mobile">
         <!-- Logo moblie -->
         <div class="logo-mobile">
-            <a href="index.html"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
+            <a href="index.html"><img src="{{url("template/frontend/images/".$logo->description)}}" alt="IMG-LOGO"></a>
         </div>
 
         <!-- Icon header -->
         <div class="wrap-icon-header flex-w flex-r-m m-r-15">
-            <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
-                <i class="zmdi zmdi-search"></i>
-            </div>
+            <ul class="navbar-nav" style="padding: 10px">
+                <li class="nav-item">
+                    <form class="example" action="{{route('search')}}" method="POST" enctype="multipart/form-data" style="display: flex; align-items: center;">
+                        @csrf
+                        <!-- Thanh tìm kiếm (input) -->
+                        <input type="text" placeholder="Search.." name="search" style="border: solid 1px blue; border-radius: 15px 0 0 15px; padding: 5px;">
 
-            <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart"
-                 data-notify="5">
+                        <!-- Nút tìm kiếm (button) -->
+                        <button type="submit" style="border: solid 1px blue; border-radius: 0 15px 15px 0; padding: 5px;">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </form>
+                </li>
+            </ul>
+
+            <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
+                    data-notify="{{ !is_null(\Session::get('carts')) ? count(\Session::get('carts')) : 0 }}">
                 <i class="zmdi zmdi-shopping-cart"></i>
             </div>
-
-            <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti"
-               data-notify="0">
-                <i class="zmdi zmdi-favorite-outline"></i>
-            </a>
         </div>
 
         <!-- Button show menu -->

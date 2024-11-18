@@ -104,8 +104,8 @@
 
                                     <span class="stext-105 cl3">
                        @if($product->price > $product->price_sale)
-                                            {{number_format($product->price_sale)}} VNĐ
-                                            {{number_format($product->price)}} VNĐ
+                                            <span style="text-decoration: line-through;font-size:12px">{{number_format($product->price)}} VNĐ <br> </span>
+                                            <span style="color:red">{{number_format($product->price_sale)}} VNĐ <span>
                                         @else
                                             <a href="#">LIÊN HỆ</a>
                                         @endif
