@@ -67,6 +67,16 @@ class   MenuController extends Controller
             return redirect()->back()->with('error','Xóa danh mục không thành công');
         }
     }
+    public function search(Request $request)
+    {
+        if(!empty($request->search)){
+            return view('admin.menu.list',[
+                'title'=>'Danh Sách Tìm Kiếm',
+                'menus'=>Menu::where('name','like','%'.$request->search.'%')->paginate(15),
+            ]);
+        }
+        else return redirect()->route('admin.menus.list');
+    }
 
 
 

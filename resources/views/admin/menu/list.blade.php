@@ -1,6 +1,18 @@
 @extends('admin.main')
 
 @section('content')
+    <ul class="navbar-nav" style="padding: 10px">
+
+        <li class="nav-item">
+            <form class="example" action="{{route('admin.menus.search')}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <button type="submit" style="border: solid 1px blue;border-radius: 15%"><i class="fa fa-search"></i></button>
+                <input type="text" placeholder="Search.." name="search" style="border: solid 1px blue;">
+
+            </form>
+        </li>
+
+    </ul>
 <table class="table">
     <thead>
         <tr>

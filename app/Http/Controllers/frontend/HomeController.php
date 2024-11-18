@@ -8,6 +8,7 @@ use App\Http\Services\Product\ProductService;
 use App\Http\Services\Slider\SliderService;
 use App\Models\Menu;
 use App\Models\News;
+use App\Models\Product;
 use http\Encoding\Stream\Deflate;
 use Illuminate\Http\Request;
 
@@ -51,5 +52,27 @@ class HomeController extends Controller
         }
 
         return response()->json(['html' => '' ]);
+    }
+
+    public function search(Request $request)
+    {
+
+            $products = Product::where('name','like','%'.$request->search.'%')->paginate(12);
+
+            if($products->isEmpty() || empty($request->search)){
+                return view('frontend.search.listsearch',[
+                    'title' => 'Không Có  Sản Phẩm Tìm Kiếm',
+                    'products' => null
+                ]);
+            }
+            else{
+                return view('frontend.search.listsearch',[
+                    'title' => 'Sản Phẩm Tìm Kiếm',
+                    'products' => $products
+                ]);
+            }
+
+
+
     }
 }

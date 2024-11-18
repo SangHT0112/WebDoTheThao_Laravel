@@ -54,6 +54,8 @@ Route::middleware(['auth'])->group(function () {
             Route::get('edit/{menu}', [MenuController::class, 'show'])->name('admin.menus.edit');
             Route::post('edit/{menu}', [MenuController::class, 'update']);
             Route::get('destroy/{id}', [MenuController::class,'destroy'])->name('admin.menus.destroy');
+            Route::get('search', [MenuController::class,'search'])->name('admin.menus.search');
+            Route::post('search', [MenuController::class,'search']);
         });
 
 
@@ -104,6 +106,7 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::get('/',[HomeController::class,'index'])->name('home');
+Route::post('/',[HomeController::class,'search'])->name('search');
 Route::post('/services/load-product', [HomeController::class, 'loadProduct']);
 Route::get('danh-muc/{id}-{slug}.html',[App\Http\Controllers\frontend\MenuController::class,'index'])->name('danhmuc.sanpham');
 Route::get('san-pham/{id}-{slug}.html',[App\Http\Controllers\frontend\ProductController::class,'index']);
