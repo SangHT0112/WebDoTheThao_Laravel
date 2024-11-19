@@ -74,8 +74,15 @@ class HomeController extends Controller
                     'products' => $products
                 ]);
             }
+    }
 
 
-
+    public function beStSale()
+    {
+        $products=Product::where('price_sale','!=',0)->paginate(12);
+        return view('frontend.bestsaler.bestsaler',[
+            'title'=>'Sale',
+            'products'=>$products
+        ]);
     }
 }

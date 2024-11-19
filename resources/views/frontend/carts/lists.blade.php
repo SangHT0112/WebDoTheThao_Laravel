@@ -8,17 +8,18 @@
                 <div class="row">
                     <div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
                         <div class="m-l-25 m-r--38 m-lr-0-xl">
-                            <div class="wrap-table-shopping-cart">
+                            <div class="wrap-table-shopping-cart" style="width: 720px">
                                 @php $total = 0; @endphp
-                                <table class="table-shopping-cart">
+                                <table class="table-shopping-cart" >
                                     <tbody>
-                                    <tr class="table_head">
-                                        <th class="column-1">Product</th>
-                                        <th class="column-2"></th>
-                                        <th class="column-3">Price</th>
-                                        <th class="column-4">Quantity</th>
-                                        <th class="column-5">Total</th>
-                                        <th class="column-6">&nbsp;</th>
+                                    <tr class="table_head" style="background-color: #f4f4f4;">
+                                        <th class="column-1" style="padding: 15px 20px; width: 200px; text-align: center;">Product</th>
+                                        <th class="column-2" style="padding: 15px 20px; width: 250px; text-align: left;"></th>
+
+                                        <th class="column-3" style="padding: 15px 20px; width: 150px; text-align: right;">Price</th>
+                                        <th class="column-4" style="padding: 15px 20px; width: 200px; text-align: center;">Quantity</th>
+                                        <th class="column-5" style="padding: 15px 20px; width: 150px; text-align: right;">Total</th>
+                                        <th class="column-6" style="padding: 15px 20px; width: 120px; text-align: center;">&nbsp;</th>
                                     </tr>
 
                                     @foreach($products as $key => $product)
@@ -27,39 +28,46 @@
                                             $priceEnd = $price * $carts[$product->id];
                                             $total += $priceEnd;
                                         @endphp
-                                        <tr class="table_row">
-                                            <td class="column-1">
+                                        <tr class="table_row" style="line-height: 1.6;">
+                                            <td class="column-1" style="padding: 15px 20px; width: 200px; text-align: center;">
                                                 <div class="how-itemcart1">
                                                     <img src="{{ $product->thumb }}" alt="IMG">
                                                 </div>
                                             </td>
-                                            <td class="column-2">{{ $product->name }}</td>
-                                            <td class="column-3">{{ number_format($price, 0, '', '.') }} VNĐ</td>
-                                            <td class="column-4">
+                                            <td class="column-2" style="padding: 15px 20px; width: 250px; text-align: left;">{{ $product->name }}</td>
+
+                                            <td class="column-3" style="padding: 15px 20px; width: 150px; text-align: right;">
+                                                {{ number_format($price, 0, '', '.') }} VNĐ
+                                            </td>
+                                            <td class="column-4" style="padding: 15px 20px; width: 200px; text-align: center;">
                                                 <div class="wrap-num-product flex-w m-l-auto m-r-0">
                                                     <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
                                                         <i class="fs-16 zmdi zmdi-minus"></i>
                                                     </div>
 
                                                     <input class="mtext-104 cl3 txt-center num-product" type="number"
-                                                        name="num_product[{{ $product->id }}]" value="{{ $carts[$product->id] }}">
+                                                           name="num_product[{{ $product->id }}]" value="{{ $carts[$product->id] }}">
 
                                                     <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
                                                         <i class="fs-16 zmdi zmdi-plus"></i>
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="column-5" style="padding-left: 10px;">{{ number_format($priceEnd, 0, '', '.') }} VNĐ</td>
-                                            <td class="p-r-15">
-                                                <a href="/carts/delete/{{ $product->id }}">Xóa</a>
+                                            <td class="column-5" style="padding: 15px 20px; width: 150px; text-align: right;">
+                                                {{ number_format($priceEnd, 0, '', '.') }} VNĐ
+                                            </td>
+                                            <td class="p-r-15" style="padding: 15px 20px; width: 120px; text-align: center;">
+                                                <a href="/carts/delete/{{ $product->id }}" style="color: red;">Xóa</a>
                                             </td>
                                         </tr>
                                     @endforeach
+
+
                                     </tbody>
                                 </table>
                             </div>
 
-                            <div class="flex-w flex-sb-m bor15 p-t-18 p-b-15 p-lr-40 p-lr-15-sm">
+                            <div class="flex-w flex-sb-m bor15 p-t-18 p-b-15 p-lr-40 p-lr-15-sm" style="width: 720px">
                                 <div class="flex-w flex-m m-r-20 m-tb-5">
                                     <input class="stext-104 cl2 plh4 size-117 bor13 p-lr-20 m-r-10 m-tb-5" type="text"
                                         name="coupon" placeholder="Coupon Code">
@@ -70,7 +78,7 @@
                                     </div>
                                 </div>
 
-                                <input type="submit" value="Cập Nhật Giỏ Hàng" formaction="/update-cart"
+                                    <input type="submit" value="Cập Nhật Giỏ Hàng" formaction="/update-cart"
                                     class="flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10">
                                 @csrf
                             </div>
@@ -107,7 +115,7 @@
                                         </span>
 
                                         <div class="bor8 bg0 m-b-12">
-                                            <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="name" placeholder="Tên khách Hàng" required>
+                                            <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="name" value="{{ old('name') }}" placeholder="Tên khách Hàng" required>
                                         </div>
 
                                         <div class="bor8 bg0 m-b-12">

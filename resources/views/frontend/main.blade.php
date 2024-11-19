@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     @include('frontend/head')
+
 </head>
 
 <body > <!--class="animsition" -->

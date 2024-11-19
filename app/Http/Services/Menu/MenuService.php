@@ -55,6 +55,7 @@ class MenuService
         $menu->description = (string) $request->input('description');
         $menu->content = (string) $request->input('content');
         $menu->active = (string) $request->input('active');
+        $menu->updated_at = (string) $request->input('updated_at');
         $menu->save();
 
         Session::flash('success','Cập nhật thành công Danh mục');

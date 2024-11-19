@@ -39,6 +39,7 @@
             letter-spacing: 0.5px; /* Điều chỉnh khoảng cách giữa các chữ */
             font-size: 16px; /* Điều chỉnh kích thước chữ cho dễ đọc */
             color: #333; /* Màu chữ mặc định */
+            overflow-x: hidden;
         }
 
         /* Cập nhật cho các tiêu đề */
@@ -75,7 +76,7 @@
         /* Đảm bảo rằng các phần tử trong giao diện người dùng (UI) đều sử dụng font chữ đồng nhất */
         input, textarea, select {
             font-family: 'Roboto', sans-serif;
-        }</style>
+        } </style>
     <script>// Hàm mở modal
         function openModal(productId) {
             var modal = document.getElementById('modal' + productId);

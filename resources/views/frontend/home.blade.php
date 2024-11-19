@@ -88,7 +88,7 @@
                     <div class="col-md-6 p-b-30">
                         <div class="block-news wrap-pic-w">
                             <a href="{{asset('storage/'.$new->imgs)}}" class="block-news-txt">
-                                <img src="{{asset('storage/'.$new->imgs)}}" alt="news image" style="width: 500px;height: 300px">
+                                <img src="{{asset('storage/'.$new->imgs)}}" alt="news image" style="width: 550px;height: 300px">
                             </a>
                             <div class="block-news-title">
                                 <br>

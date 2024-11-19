@@ -107,6 +107,7 @@ Route::middleware(['auth'])->group(function () {
 
 Route::get('/',[HomeController::class,'index'])->name('home');
 Route::post('/',[HomeController::class,'search'])->name('search');
+Route::get('/saler',[HomeController::class,'beStSale'])->name('saler');
 Route::post('/services/load-product', [HomeController::class, 'loadProduct']);
 Route::get('danh-muc/{id}-{slug}.html',[App\Http\Controllers\frontend\MenuController::class,'index'])->name('danhmuc.sanpham');
 Route::get('san-pham/{id}-{slug}.html',[App\Http\Controllers\frontend\ProductController::class,'index']);

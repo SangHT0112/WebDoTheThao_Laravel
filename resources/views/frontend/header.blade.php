@@ -34,7 +34,7 @@
         <!-- Header desktop -->
     <div class="container-menu-desktop">
 
-        <div class="wrap-menu-desktop">
+        <div class="wrap-menu-desktop" >
             <nav class="limiter-menu-desktop container">
 
                 <!-- Logo desktop -->
@@ -51,6 +51,13 @@
                         {!! $menusHtml !!}
 
 
+                        <li class="active-menu">
+                            <a href="{{route('saler')}}" style="font-size: 15px;">
+                                BEST SALE
+                                <img src="{{asset('/template/frontend/images/flash-sale.png')}}" alt="fire" style="width: 20px; height: 20px; position: relative;top: -15px;left: -5px">
+
+                            </a>
+                        </li>
 
                     </ul>
                 </div>
@@ -78,10 +85,7 @@
                         <i class="zmdi zmdi-shopping-cart"></i>
                     </div>
 
-                    <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti"
-                       data-notify="0">
-                        <i class="zmdi zmdi-favorite-outline"></i>
-                    </a>
+
                 </div>
             </nav>
         </div>
