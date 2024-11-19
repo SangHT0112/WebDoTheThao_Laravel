@@ -1,4 +1,5 @@
 <header>
+
     @php
         use App\Http\Controllers\Controller;
         use Illuminate\Http\Request;
@@ -7,6 +8,29 @@
            $logo =Config::where('status',1)->where('name','logo')->first();
            $favicon =Config::where('status',1)->where('name','favicon')->first();
     @endphp
+    <style>
+        .main-menu {
+            font-family:  'Roboto', sans-serif;
+            display: grid;
+            grid-auto-flow: column;
+            gap: 1px; /* Khoảng cách giữa các mục */
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .main-menu a {
+            font-family:  'Roboto', sans-serif;
+
+            font-size: 15px;
+            text-decoration: none;
+            color: #333;
+
+        }
+
+
+    </style>
+
         <!-- Header desktop -->
     <div class="container-menu-desktop">
 
@@ -20,15 +44,13 @@
 
                 <!-- Menu desktop -->
                 <div class="menu-desktop">
-                    <ul class="main-menu">
+                    <ul class="main-menu" >
 
-                        <li class="active-menu"><a href="/">Trang chủ</a></li>
+                        <li class="active-menu"><a href="/" style="font-size: 15px;">HOME</a></li>
 
                         {!! $menusHtml !!}
 
-                        <li>
-                            <a href="about.html">About</a>
-                        </li>
+
 
                     </ul>
                 </div>

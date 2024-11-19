@@ -13,6 +13,7 @@ class News extends Model
         "status",
         "title",
         "description",
-        "imgs"
+        "imgs",
+
     ];
 }

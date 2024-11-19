@@ -38,7 +38,7 @@ class ProductAdminService
 
         try {
             $request->except('_token');
-            Product::create($request->all());
+            Product::create($request->except('description'),['description' => strip_tags($request->description)]);
 
             Session::flash('success', 'Thêm Sản phẩm thành công');
         } catch (\Exception $err) {
@@ -64,7 +64,7 @@ class ProductAdminService
 
     try {
         // Cập nhật dữ liệu sản phẩm
-        $product->fill($request->only(['name', 'menu_id', 'price', 'price_sale', 'active', 'description', 'content'])); // Chỉ lấy các trường cần thiết
+        $product->fill($request->only(['name', 'menu_id', 'price', 'price_sale', 'active', 'description', 'content','updated_at'])); // Chỉ lấy các trường cần thiết
         $product->save();
 
         Session::flash('success', 'Cập nhật thành công sản phẩm');

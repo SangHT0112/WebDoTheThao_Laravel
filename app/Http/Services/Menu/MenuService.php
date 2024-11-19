@@ -2,6 +2,7 @@
 
 
 namespace App\Http\Services\Menu;
+use App\Models\Product;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 use App\Models\Menu;
@@ -29,9 +30,10 @@ class MenuService
                'name' =>(string) $request->input('name'),
                 'parent_id' =>(int) $request->input('parent_id'),
                 'slug' =>Str::slug($request->input('name'),'-'),
-                'description' =>(string) $request->input('description'),
-                'content' =>(string) $request->input('content'),
+                'description' =>strip_tags((string) $request->input('description')),
+                'content' =>strip_tags((string) $request->input('content')),
                 'active' =>(string) $request->input('active'),
+                'created_at' =>(string) $request->input('created_at'),
             ]);
 
                 Session::flash('success','Thêm danh mục thành công');
@@ -85,14 +87,19 @@ class MenuService
         $query = $menu->products()
             ->select('id', 'name', 'price', 'price_sale', 'thumb')
             ->where('active', 1);
-
         if ($request->input('price')) {
             $query->orderBy('price', $request->input('price'));
         }
-
-        return $query
-            ->orderByDesc('id')
-            ->paginate(12)
-            ->withQueryString();
+        if($query->count() > 0){
+            return $query
+                ->orderByDesc('id')
+                ->paginate(12)
+                ->withQueryString();
+        }
+        $menucha=Menu::where('parent_id',$menu->id)->where('active',1)->get();
+        foreach ($menucha as $item) {
+            $query->orWhere('menu_id', $item->id);
+        }
+        return $query->paginate(12);
     }
 }

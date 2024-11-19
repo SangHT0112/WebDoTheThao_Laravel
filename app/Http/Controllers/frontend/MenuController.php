@@ -4,6 +4,7 @@ namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Services\Menu\MenuService;
+use App\Models\Menu;
 use Illuminate\Http\Request;
 
 class MenuController extends Controller
@@ -15,15 +16,12 @@ class MenuController extends Controller
         $this->menuService = $menuService;
     }
 
-    public function index(Request $request, $id, $slug = '')
+    public function index(Request $request,Menu $id, $slug = '')
     {
-        $menu = $this->menuService->getId($id);
-        $products = $this->menuService->getProduct($menu, $request);
-
+        $products = $this->menuService->getProduct($id, $request);
         return view('frontend.menu', [
-            'title' => $menu->name,
-            'products' => $products,
-            'menu'  => $menu
+            'title' => $id->name,
+            'products' => $products
         ]);
     }
 }

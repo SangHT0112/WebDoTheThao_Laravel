@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Services\Menu\MenuService;
 use App\Http\Services\Product\ProductService;
 use App\Http\Services\Slider\SliderService;
+use App\Models\Config;
 use App\Models\Menu;
 use App\Models\News;
 use App\Models\Product;
@@ -29,6 +30,7 @@ class HomeController extends Controller
     {
         $logo=session('logo');/*test*/
         $news=News::get();
+        $video=Config::where('status','1')->where('name','video')->first();
 
         return view('frontend.home',[
 
@@ -37,7 +39,8 @@ class HomeController extends Controller
            'menus'=>$this->menu->show(),
            'products'=>$this->product->get(),
             'logo'=>$logo,
-            'news'=>$news
+            'news'=>$news,
+            'video'=>$video
         ]);
     }
 

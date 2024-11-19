@@ -18,7 +18,7 @@
 		</span>
 	</div>
 </div>
-    
+
     <!-- Product Detail -->
 	<section class="sec-product-detail bg0 p-t-65 p-b-60">
         <div class="container">
@@ -182,7 +182,7 @@
         <div class="container">
             <div class="p-b-45">
                 <h3 class="ltext-106 cl5 txt-center">
-                   Xem thêm sản phẩm 
+                   Xem thêm sản phẩm
                 </h3>
             </div>
 

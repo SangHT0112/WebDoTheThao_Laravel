@@ -16,6 +16,8 @@ class Menu extends Model
         'content',
         'slug',
         'active',
+        'created_at',
+        'updated_at'
     ];
 
     public function products()

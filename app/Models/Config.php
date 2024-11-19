@@ -12,6 +12,7 @@ class Config extends Model
     public $fillable=[
         "logo",
         "favicon",
+        "cmt",
         "diachi",
         "email",
         "copyright"

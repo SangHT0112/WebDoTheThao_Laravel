@@ -83,13 +83,13 @@
     <div class="sec-news bg0 p-t-50 p-b-50">
         <div class="container">
             <div class="row">
-                <!-- Tin Tức  -->
+                <!-- Tin Tức -->
                 @foreach($news as $new)
-                <div class="col-md-6 p-b-30">
-                    <div class="block-news wrap-pic-w">
-                        <a href="{{asset('storage/'.$new->imgs)}}" class="block-news-txt">
-                        <img src="{{asset('storage/'.$new->imgs)}}" alt="news image" style="width: 500px;height: 300px">
-                        </a>
+                    <div class="col-md-6 p-b-30">
+                        <div class="block-news wrap-pic-w">
+                            <a href="{{asset('storage/'.$new->imgs)}}" class="block-news-txt">
+                                <img src="{{asset('storage/'.$new->imgs)}}" alt="news image" style="width: 500px;height: 300px">
+                            </a>
                             <div class="block-news-title">
                                 <br>
                                 <h4 class="ltext-103 cl5">{{$new->title}}</h4>
@@ -97,15 +97,44 @@
                             <div class="block-news-desc">
                                 <p class="stext-102 cl6">{{$new->description}}</p>
                             </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
 
+
+
+        </div>
+    </div>
+    <!-- Đoạn Giới Thiệu và Video -->
+    <div class="row p-t-30">
+        <div class="col-12">
+            <div class="full-screen-section bg-dark text-white p-4">
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div class="col-md-6">
+                        <h2 class="ltext-104 cl5" style="font-family: 'Merriweather', serif;color: white">GIỚI THIỆU</h2>
+                        <p class="stext-102 cl6" style="color: white">
+                            {{$video->cmt}}
+                        </p>
+                    </div>
+
+
+                    <div class="col-md-6 p-l-30">
+
+
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item"
+                                    src="{{asset('/template/frontend/images/'.$video->description)}}"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                        </div>
                     </div>
                 </div>
-
-                @endforeach
-
             </div>
         </div>
     </div>
+
     <div class="divider" style="border-top: 2px solid #ccc; margin: 20px 0;"></div>
     <!-- Product -->
     <section class="bg0 p-t-23 p-b-140">
