@@ -1,21 +1,20 @@
 @extends('frontend.main')
 @section('content')
-    <form class="bg0 p-t-130 p-b-85" method="post">
+    <form class="bg0 p-t-130 p-b-85" method="post" >
         @include('admin.alert')
 
         @if (count($products) != 0)
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
+            <div class="container" >
+                <div class="row" >
+                    <div class="col-lg-10 col-xl-7 m-lr-auto m-b-50" >
                         <div class="m-l-25 m-r--38 m-lr-0-xl">
-                            <div class="wrap-table-shopping-cart" style="width: 720px">
+                            <div class="wrap-table-shopping-cart" style="width: 720px;box-sizing: border-box; position: relative; z-index: 10;">
                                 @php $total = 0; @endphp
                                 <table class="table-shopping-cart" >
                                     <tbody>
                                     <tr class="table_head" style="background-color: #f4f4f4;">
                                         <th class="column-1" style="padding: 15px 20px; width: 200px; text-align: center;">Product</th>
                                         <th class="column-2" style="padding: 15px 20px; width: 250px; text-align: left;"></th>
-
                                         <th class="column-3" style="padding: 15px 20px; width: 150px; text-align: right;">Price</th>
                                         <th class="column-4" style="padding: 15px 20px; width: 200px; text-align: center;">Quantity</th>
                                         <th class="column-5" style="padding: 15px 20px; width: 150px; text-align: right;">Total</th>
@@ -57,7 +56,7 @@
                                                 {{ number_format($priceEnd, 0, '', '.') }} VNĐ
                                             </td>
                                             <td class="p-r-15" style="padding: 15px 20px; width: 120px; text-align: center;">
-                                                <a href="/carts/delete/{{ $product->id }}" style="color: red;">Xóa</a>
+                                                <a href="{{route('carts.delete', $product->id )}}" style="color: red;">Xóa</a>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -88,7 +87,7 @@
                     <div class="col-sm-10 col-lg-7 col-xl-5 m-lr-auto m-b-50">
                         <div class="bor10 p-lr-40 p-t-30 p-b-40 m-l-63 m-r-40 m-lr-0-xl p-lr-15-sm">
                             <h4 class="mtext-109 cl2 p-b-30">
-                                Cart Totals
+                                {{$title}}
                             </h4>
 
                             <div class="flex-w flex-t p-t-27 p-b-33">
@@ -147,6 +146,14 @@
             </div>
     </form>
 @else
-    <div class="text-center"><h2>Giỏ hàng trống</h2></div>
+    <div class="text-center" style="height: 500px">
+
+            <img src="{{ asset('/template/frontend/images/R.png') }}" alt="Empty Cart" style="width: 500px">
+
+
+        <div class="header-cart-item-txt p-t-8" style="margin-left: 30px">
+            <span class="header-cart-item-name" style="font-size: 20px">There are no products in the cart yet</span>
+        </div>
+    </div>
 @endif
 @endsection

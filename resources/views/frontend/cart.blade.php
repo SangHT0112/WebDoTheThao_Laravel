@@ -1,3 +1,4 @@
+
 <div class="wrap-header-cart js-panel-cart">
     <div class="s-full js-hide-cart"></div>
 
@@ -18,11 +19,12 @@
                     @foreach($products as $key => $product)
                         @php
                             $price = \App\Helpers\Helper::price($product->price, $product->price_sale);
-                            $sumPriceCart += $product->price_sale != 0 ? $product->price_sale : $product->price;
+                            $carts = Session::get('carts');
+                            $sumPriceCart += ($product->price_sale != 0 ? $product->price_sale : $product->price) * $carts[$product->id];
                         @endphp
                         <li class="header-cart-item flex-w flex-t m-b-12">
                             <div class="header-cart-item-img">
-                                <img src="{{ $product->thumb }}" alt="IMG">
+                                <img src="{{ $product->thumb }}" alt="IMG" style="height: 80px">
                             </div>
 
                             <div class="header-cart-item-txt p-t-8">
@@ -31,14 +33,29 @@
                                 </a>
 
                                 <span class="header-cart-item-info">
-                                       {!! $price !!}
-                                </span>
+                        {!! $price !!}
+                    </span>
+
+                                <span class="header-cart-item-info"> SL: {{$carts[$product->id]}}</span>
                             </div>
+
                         </li>
                     @endforeach
-                @endif
 
+                @else
+
+                        <div class="">
+
+                            <img src="{{ asset('/template/frontend/images/R.png') }}" alt="Empty Cart" style="width: 280px">
+                        </div>
+
+                        <div class="header-cart-item-txt p-t-8" style="margin-left: 30px">
+                            <span class="header-cart-item-name" style="font-size: 11px">There are no products in the cart yet</span>
+                        </div>
+
+                @endif
             </ul>
+
 
             <div class="w-full">
                 <div class="header-cart-total w-full p-tb-40">
@@ -46,9 +63,7 @@
                 </div>
 
                 <div class="header-cart-buttons flex-w w-full">
-                    <a href="/carts" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
-                        View Cart
-                    </a>
+
 
                     <a href="/carts" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
                         Check Out

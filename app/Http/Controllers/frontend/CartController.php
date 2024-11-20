@@ -23,7 +23,6 @@ class CartController extends Controller
         if ($result === false) {
             return redirect()->back();
         }
-
         return redirect('/carts');
     }
 

@@ -95,7 +95,7 @@
     <div class="wrap-header-mobile">
         <!-- Logo moblie -->
         <div class="logo-mobile">
-            <a href="index.html"><img src="{{url("template/frontend/images/".$logo->description)}}" alt="IMG-LOGO"></a>
+            <a href="/"><img src="{{url("template/frontend/images/".$logo->description)}}" alt="IMG-LOGO"></a>
         </div>
 
         <!-- Icon header -->
@@ -134,13 +134,17 @@
     <div class="menu-mobile">
 
         <ul class="main-menu-m">
-            <li class="active-menu"><a href="/">Trang chu</a>
+            <li class="active-menu"><a href="/">HOME</a>
             </li>
 
             {!! $menusHtml !!}
 
-            <li>
-                <a href="about.html">About</a>
+            <li class="active-menu">
+                <a href="{{route('saler')}}" style="font-size: 15px;">
+                    BEST SALE
+                    <img src="{{asset('/template/frontend/images/flash-sale.png')}}" alt="fire" style="width: 20px; height: 20px; position: relative;top: -15px;left: -5px">
+
+                </a>
             </li>
         </ul>
     </div>

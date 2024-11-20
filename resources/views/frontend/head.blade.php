@@ -66,6 +66,17 @@
         }
 
 
+        .bg0.p-t-130.p-b-85 {
+            padding-bottom: 0 !important; /* Loại bỏ padding dưới */
+        }
+
+        .text-center {
+            margin-bottom: 0 !important; /* Loại bỏ margin dưới */
+        }
+
+        .footer {
+            margin-bottom: 0 !important; /* Nếu có phần footer */
+        }
 
         /* Cập nhật các phần tử có class `.ltext` nếu cần */
         .ltext-101, .ltext-102, .ltext-103 {
