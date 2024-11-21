@@ -54,7 +54,14 @@ class CouponController extends Controller
         return view('admin.coupon.list', [
             'title'=>'Danh Sách Coupon',
             'coupons' => Coupon::paginate(15)
-        ]);;
+        ]);
+    }
+
+
+    public function delete(Coupon $id)
+    {
+        Coupon::where('id', $id->id)->delete();
+        return redirect()->back()->with('success','Xóa Coupon Thành Công!');
     }
 
 }

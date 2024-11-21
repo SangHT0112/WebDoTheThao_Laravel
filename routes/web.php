@@ -104,6 +104,7 @@ Route::middleware(['auth'])->group(function () {
             Route::get('add',[\App\Http\Controllers\Admin\CouponController::class,'create'])->name('admin.coupon.add');
             Route::post('/',[\App\Http\Controllers\Admin\CouponController::class,'createpost'])->name('admin.coupon.postadd');
             Route::get('list',[\App\Http\Controllers\Admin\CouponController::class,'list'])->name('admin.coupon.list');
+            Route::DELETE('list/{id}',[\App\Http\Controllers\Admin\CouponController::class,'delete'])->name('admin.coupon.delete');
         });
 
 

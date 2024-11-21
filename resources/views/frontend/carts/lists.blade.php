@@ -99,14 +99,15 @@
 
                                 <div class="size-209 p-t-1">
                                     <span class="mtext-110 cl2">
-                                        @if($coupon && isset($coupon['gia'])) <!-- Kiểm tra coupon và sự tồn tại của 'gia' -->
                                         @php
-                                            $gia =  $coupon['gia']; // Đảm bảo gia là số thực
+
+                                        @endphp
+                                        @if($coupon && isset($coupon['gia']))
+                                        @php
+                                            $gia =  $coupon['gia'];
                                             if($gia < 1) {
-                                                // Giảm giá theo tỷ lệ (ví dụ: 0.1 là giảm 10%)
                                                 $total = $total - ($total * $gia);
                                             } else {
-                                                // Giảm giá theo giá trị cố định (ví dụ: giảm 100,000 VND)
                                                 $total = $total - $gia;
                                             }
                                         @endphp
@@ -114,6 +115,14 @@
 
                                         {{ number_format($total, 0, '', '.') }} VNĐ
                                     </span>
+                                    <input type="number" name="totals" step="0.01" value="{{$total}}" hidden >
+                                    @if($coupon && isset($coupon['gia']))
+                                        <input type="number" name="khuyenmai" step="0.01" value="{{ $coupon['gia'] }}" hidden >
+                                        <input type="text" name="couponss"  value="{{ $coupon['macoupon'] }}" hidden >
+                                    @else
+                                        <input type="number" name="khuyenmai" step="0.01" value="0" hidden>
+                                        <input type="text" name="couponss"  value="" hidden >
+                                    @endif
                                 </div>
                             </div>
 

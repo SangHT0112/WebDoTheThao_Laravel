@@ -46,7 +46,7 @@
                 <form action="{{ route('admin.products.destroy', $searchs->id) }}" method="POST" style="display:inline;">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this product?');">
+                    <button type="submit" class="btn btn-danger btn-sm" >
                         <i class="fas fa-trash"></i>
                     </button>
                 </form>

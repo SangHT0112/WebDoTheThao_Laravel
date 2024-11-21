@@ -33,8 +33,13 @@
 
                     <td>{{$coupon->quantity}}</td>
                     <td>
-                        <a class="btn btn-primary btn-sm" href="#"><i class="fas fa-edit"></i></a>
-                        <a class="btn btn-danger btn-sm" href="#" ><i class="fas fa-trash"></i></a>
+                        <form method="POST" action="{{route('admin.coupon.delete',['id'=>$coupon])}}" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                        <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i>
+                        </button>
+                        </form>
+
                     </td>
 
                 </tr>
