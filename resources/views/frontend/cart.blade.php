@@ -59,7 +59,7 @@
 
             <div class="w-full">
                 <div class="header-cart-total w-full p-tb-40">
-                    Total: {{ number_format($sumPriceCart, '0', '', '.') }}
+                    Total: {{ number_format($sumPriceCart, '0', '', '.') }} VNĐ
                 </div>
 
                 <div class="header-cart-buttons flex-w w-full">

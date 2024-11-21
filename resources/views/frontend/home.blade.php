@@ -79,26 +79,30 @@
         </div>
     </div>
 
-    <!-- TIn tức-->
+
     <div class="sec-news bg0 p-t-50 p-b-50">
         <div class="container">
             <div class="row">
                 <!-- Tin Tức -->
                 @foreach($news as $new)
                     <div class="col-md-6 p-b-30">
-                        <div class="block-news wrap-pic-w">
+                        <div class="block-news wrap-pic-w d-flex">
+
                             <a href="{{asset('storage/'.$new->imgs)}}" class="block-news-txt">
-                                <img src="{{asset('storage/'.$new->imgs)}}" alt="news image" style="width: 550px;height: 300px">
+                                <img src="{{asset('storage/'.$new->imgs)}}" alt="news image" class="rounded-circle" style="width: 250px; height: 250px; object-fit: cover;">
                             </a>
-                            <div class="block-news-title">
-                                <br>
-                                <h4 class="ltext-103 cl5">{{$new->title}}</h4>
-                            </div>
-                            <div class="block-news-desc">
-                                <p class="stext-102 cl6">{{$new->description}}</p>
+
+                            <div class="block-news-content ml-4">
+                                <div class="block-news-title">
+                                    <h4 class="ltext-103 cl5">{{$new->title}}</h4>
+                                </div>
+                                <div class="block-news-desc">
+                                    <p class="stext-102 cl6" >{{$new->description}}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 @endforeach
             </div>
 

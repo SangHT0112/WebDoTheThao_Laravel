@@ -100,6 +100,12 @@ Route::middleware(['auth'])->group(function () {
         Route::get('customers', [\App\Http\Controllers\Admin\CartController::class, 'index']);
         Route::get('customers/view/{customer}', [\App\Http\Controllers\Admin\CartController::class, 'show']);
 
+        Route::prefix('coupons')->group(function(){
+            Route::get('add',[\App\Http\Controllers\Admin\CouponController::class,'create'])->name('admin.coupon.add');
+            Route::post('/',[\App\Http\Controllers\Admin\CouponController::class,'createpost'])->name('admin.coupon.postadd');
+            Route::get('list',[\App\Http\Controllers\Admin\CouponController::class,'list'])->name('admin.coupon.list');
+        });
+
 
     });
 
@@ -118,6 +124,7 @@ Route::get('san-pham/{id}-{slug}.html',[App\Http\Controllers\frontend\ProductCon
 
 Route::post('add-cart', [CartController::class, 'index']);
 Route::get('carts', [CartController::class, 'show']);
-Route::post('update-cart', [CartController::class, 'update']);
+Route::post('update-cart', [CartController::class, 'update'])->name('update.cart');
+Route::post('apply.coupon', [CartController::class, 'applyCoupon'])->name('apply.coupon');
 Route::get('carts/delete/{id}', [CartController::class, 'remove'])->name('carts.delete');
-Route::post('carts', [CartController::class, 'addCart']);
+Route::post('carts', [CartController::class, 'addCart'])->name('carts.post');

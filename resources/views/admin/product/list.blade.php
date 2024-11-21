@@ -22,8 +22,8 @@
             <th>Danh Mục</th>
             <th>Giá Gốc</th>
             <th>Giá Sale</th>
-            <th>Active</th>
-            <th>Update</th>
+            <th>Trạng thái</th>
+            <th>Cập nhật</th>
             <th style="width: 100px">&nbsp;</th>
         </tr>
     </thead>
