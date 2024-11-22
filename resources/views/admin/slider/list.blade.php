@@ -8,7 +8,7 @@
             <th>Tiêu Đề</th>
             <th>Link</th>
             <th>Ảnh</th>
-            <th>Trang Thái</th>
+            <th>Trạng Thái</th>
             <th>Cập Nhật</th>
             <th style="width: 100px">&nbsp;</th>
         </tr>

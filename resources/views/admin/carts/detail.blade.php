@@ -16,10 +16,16 @@
         <table class="table">
             <tbody>
             <tr class="table_head">
+                <th></th>
                 <th class="column-1">IMG</th>
+                <th></th>
                 <th class="column-2">Product</th>
+                <th></th>
+
                 <th class="column-3">Price</th>
                 <th class="column-4">Quantity</th>
+                <th></th>
+                <th></th>
                 <th class="column-5">Total</th>
             </tr>
 
@@ -29,20 +35,31 @@
                     $total += $price;
                 @endphp
                 <tr>
+                    <td></td>
                     <td class="column-1">
                         <div class="how-itemcart1">
                             <img src="{{ $cart->product->thumb }}" alt="IMG" style="width: 100px">
                         </div>
                     </td>
+                    <td></td>
                     <td class="column-2">{{ $cart->product->name }}</td>
+                    <td></td>
                     <td class="column-3">{{ number_format($cart->price, 0, '', '.') }}</td>
                     <td class="column-4">{{ $cart->pty }}</td>
+                    <td></td>
+                    <td></td>
                     <td class="column-5">{{ number_format($price, 0, '', '.') }}</td>
                 </tr>
             @endforeach
                 <tr>
-                    <td colspan="4" class="text-right">Tổng Tiền</td>
-                    <td>{{ number_format($total, 0, '', '.') }}</td>
+                    <td colspan="4" class="text-right">Khuyến mãi:</td>
+                    @if($customer->khuyenmai <1)
+                    <td>{{ $customer->khuyenmai * 100}} % </td>
+                    @else
+                        <td>{{ number_format($customer->khuyenmai, 0, '', '.') }} VNĐ</td>
+                    @endif
+                    <td colspan="4" class="text-right">Tổng Tiền:</td>
+                    <td>{{ number_format($customer->total, 0, '', '.') }} VNĐ</td>
                 </tr>
             </tbody>
         </table>

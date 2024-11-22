@@ -60,7 +60,7 @@
                     <div class="form-group">
                         <label for="menu"> Email
                         </label>
-                        <input type="text" name="email" value="{{$email->description}}" class="form-control" style="width: 1379px">
+                        <input type="text" name="email" value="{{$email->description}}" class="form-control" style="width: 1190px">
                     </div>
                 </div>
 
@@ -71,7 +71,7 @@
                     <div class="form-group">
                         <label for="menu"> Copyright
                         </label>
-                        <input type="text" name="copyright" value="{{$copyright->description}}" class="form-control" style="width: 1379px">
+                        <input type="text" name="copyright" value="{{$copyright->description}}" class="form-control" style="width: 1190px">
                     </div>
                 </div>
 

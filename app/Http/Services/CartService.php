@@ -60,7 +60,6 @@ class CartService
     public function update($request)
     {
         Session::put('carts', $request->input('num_product'));
-
         return true;
     }
 
@@ -68,7 +67,11 @@ class CartService
     {
         $carts = Session::get('carts');
         unset($carts[$id]);
-
+        Session::forget('name');
+        Session::forget('phone');
+        Session::forget('address');
+        Session::forget('email');
+        Session::forget('contents');
         Session::put('carts', $carts);
         return true;
     }
@@ -76,7 +79,7 @@ class CartService
     public function addCart($request)
     {
 
-        try {
+
             DB::beginTransaction();
 
             $carts = Session::get('carts');
@@ -89,7 +92,10 @@ class CartService
                 'phone' => $request->input('phone'),
                 'address' => $request->input('address'),
                 'email' => $request->input('email'),
-                'content' => $request->input('content')
+                'content' => $request->input('content'),
+                'total'=>$request->input('totals'),
+                'khuyenmai' => $request->input('khuyenmai'),
+                'coupon'=>$request->input('couponss'),
             ]);
 
             $this->infoProductCart($carts, $customer->id);
@@ -99,13 +105,14 @@ class CartService
 
             #Queue
             #SendMail::dispatch($request->input('email'))->delay(now()->addSeconds(2));
-
+            Session::forget('name');
+            Session::forget('phone');
+            Session::forget('address');
+            Session::forget('email');
+            Session::forget('contents');
+            Session::forget('coupon');
             Session::forget('carts');
-        } catch (\Exception $err) {
-            DB::rollBack();
-            Session::flash('error', 'Đặt Hàng Lỗi, Vui lòng thử lại sau');
-            return false;
-        }
+
 
         return true;
     }
