@@ -66,9 +66,9 @@ class CartController extends Controller
         if ($request->has('coupon') && $request->coupon != '') {
             $KhachHang =Customer::where('email',$request->email)->first();
             if ($KhachHang) {
-                if ($KhachHang->coupon === $request->coupon) {
-                    return redirect('/carts')->with('error', 'Bạn đã sử dụng mã giảm giá này rồi!');
-                }}
+
+                    return redirect('/carts')->with('error', 'Bạn đã sử dụng mã giảm giá rồi!');
+                }
             $onecoupon = Coupon::where('coupon', $request->coupon)->first();
             if($onecoupon) {
                 Session::put(['name' => $request->name]);

@@ -33,11 +33,10 @@ class CouponController extends Controller
             'created_at.required' => 'Vui lòng nhập ngày tạo!'
         ]);
         $giagiam=$request->giam;
-        if($request->giam_type === 'percent' && $request->giam >100)
+        if($request->giam_type === 'percent' && $request->giam >=100)
             return redirect()->back()->with('error','Giảm giá phần trăm không thể vượt quá 100!');
         if($request->giam_type === 'percent' && $request->giam <=100)
             $giagiam=$request->giam/100;
-
         Coupon::create(['name'=>$request->name,
                         'coupon'=>$request->coupon,
                         'giam'=>$giagiam,

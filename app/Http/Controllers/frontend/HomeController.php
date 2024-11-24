@@ -12,6 +12,7 @@ use App\Models\News;
 use App\Models\Product;
 use http\Encoding\Stream\Deflate;
 use Illuminate\Http\Request;
+use Mail;
 
 
 class HomeController extends Controller
@@ -85,4 +86,6 @@ class HomeController extends Controller
             'products'=>$products
         ]);
     }
+
+
 }

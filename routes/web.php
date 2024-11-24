@@ -36,7 +36,6 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('admin')->group(function(){
 
         Route::get('main', [MainController::class, 'index'])->name('admin');
-
         #config
         Route::get('config', [\App\Http\Controllers\Admin\ConfigController::class, 'index'])->name('config');
         Route::post('config', [\App\Http\Controllers\Admin\ConfigController::class, 'update'])->name('configupdate');
@@ -100,13 +99,13 @@ Route::middleware(['auth'])->group(function () {
         Route::get('customers', [\App\Http\Controllers\Admin\CartController::class, 'index']);
         Route::get('customers/view/{customer}', [\App\Http\Controllers\Admin\CartController::class, 'show']);
 
+        #coupon
         Route::prefix('coupons')->group(function(){
             Route::get('add',[\App\Http\Controllers\Admin\CouponController::class,'create'])->name('admin.coupon.add');
             Route::post('/',[\App\Http\Controllers\Admin\CouponController::class,'createpost'])->name('admin.coupon.postadd');
             Route::get('list',[\App\Http\Controllers\Admin\CouponController::class,'list'])->name('admin.coupon.list');
             Route::DELETE('list/{id}',[\App\Http\Controllers\Admin\CouponController::class,'delete'])->name('admin.coupon.delete');
         });
-
 
     });
 
@@ -118,6 +117,7 @@ Route::get('/saler',[HomeController::class,'beStSale'])->name('saler');
 Route::post('/services/load-product', [HomeController::class, 'loadProduct']);
 Route::get('danh-muc/{id}-{slug}.html',[App\Http\Controllers\frontend\MenuController::class,'index'])->name('danhmuc.sanpham');
 Route::get('san-pham/{id}-{slug}.html',[App\Http\Controllers\frontend\ProductController::class,'index']);
+
 
 
 
