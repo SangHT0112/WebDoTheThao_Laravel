@@ -115,7 +115,7 @@ class CartService
             $this->infoProductCart($carts, $customer->id);
 
             DB::commit();
-            Session::flash('success', 'Đặt Hàng Thành Công');
+            Session::flash('success', 'Đặt Hàng Thành Công Vui Lòng Kiểm Tra Đơn Hàng Của Bạn Trong <a href="http://mail.google.com">Gmail</a> !');
 
             #Queue
             #SendMail::dispatch($request->input('email'))->delay(now()->addSeconds(2));

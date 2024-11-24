@@ -8,7 +8,7 @@
 
 @if (Session::has('success')) <!-- Báo thành của của with - session success -->
     <div class="alert alert-success">
-        {{ Session::get('success') }}
+        {!! Session::get('success') !!}
     </div>
 @endif
 
