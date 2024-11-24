@@ -19,7 +19,9 @@
                         <label>Danh Mục</label>
                         <select class="form-control" name="menu_id">
                             @foreach($menus as $menu)
+                                @if($menu->parent_id!=0)
                                 <option value="{{ $menu->id }}">{{ $menu->name }}</option>
+                                @endif
                             @endforeach
                         </select>
                     </div>

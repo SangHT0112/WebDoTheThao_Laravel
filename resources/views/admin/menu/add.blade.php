@@ -17,6 +17,7 @@
         <select class="form-control" name="parent_id" id="parent_id">
             <option value="0">Menu Cha</option>
             @foreach($menus as $menu)
+
                 <option value="{{$menu->id}}">{{$menu->name}}</option>
             @endforeach
         </select>
