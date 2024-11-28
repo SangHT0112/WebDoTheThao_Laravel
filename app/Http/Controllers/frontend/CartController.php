@@ -63,19 +63,20 @@ class CartController extends Controller
 
     public function applyCoupon(Request $request)
     {
+        Session::put(['name' => $request->name]);
+        Session::put(['phone' => $request->phone]);
+        Session::put(['address' => $request->address]);
+        Session::put(['email' => $request->email]);
+        Session::put(['contents' => $request->contents]);
         if ($request->has('coupon') && $request->coupon != '') {
             $KhachHang =Customer::where('email',$request->email)->first();
-            if ($KhachHang) {
+            if ($KhachHang->coupon) {
 
-                    return redirect('/carts')->with('error', 'Bạn đã sử dụng mã giảm giá rồi!');
+                    return redirect('/carts')->with('error', 'Bạn đã sử dụng mã giảm giá rồi! ( Mỗi email chỉ được dùng một mã giảm giá! ');
                 }
             $onecoupon = Coupon::where('coupon', $request->coupon)->first();
             if($onecoupon) {
-                Session::put(['name' => $request->name]);
-                Session::put(['phone' => $request->phone]);
-                Session::put(['address' => $request->address]);
-                Session::put(['email' => $request->email]);
-                Session::put(['contents' => $request->contents]);
+
 
                 if ($onecoupon->quantity > 0) {
                     $newquantity = $onecoupon->quantity - 1;
@@ -92,5 +93,11 @@ class CartController extends Controller
         }
 
         return redirect('/carts')->with('error','Mã giảm giá không đúng!');
+    }
+
+    public function Xacnhan(Customer $id,$token)
+    {
+        $id->update(['token'=>$token]);
+        return view('frontend.xacnhan');
     }
 }

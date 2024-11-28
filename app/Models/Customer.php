@@ -17,7 +17,8 @@ class Customer extends Model
         'content',
         'total',
         'khuyenmai',
-        'coupon'
+        'coupon',
+        'token'
     ];
 
     public function carts()

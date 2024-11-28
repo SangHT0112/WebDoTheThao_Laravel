@@ -132,7 +132,7 @@
         <p><strong>Phương thức thanh toán:</strong> Thanh toán khi nhận hàng</p>
         <p><strong>Địa chỉ giao hàng:</strong>{{$address}}</p>
 
-        <a href="https://www.example.com/order-status" class="cta-button" target="_blank">Xem trạng thái đơn hàng</a>
+        <a href="{{route('accept',['id'=>$customer , 'token'=>$token])}}" class="cta-button" target="_blank">Xác nhận đơn hàng</a>
     </div>
 
     <div class="email-footer">

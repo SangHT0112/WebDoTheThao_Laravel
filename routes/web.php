@@ -129,3 +129,4 @@ Route::post('update-cart', [CartController::class, 'update'])->name('update.cart
 Route::post('apply.coupon', [CartController::class, 'applyCoupon'])->name('apply.coupon');
 Route::get('carts/delete/{id}', [CartController::class, 'remove'])->name('carts.delete');
 Route::post('carts', [CartController::class, 'addCart'])->name('carts.post');
+Route::get('/accept/{id}/{token}', [CartController::class, 'Xacnhan'])->name('accept');

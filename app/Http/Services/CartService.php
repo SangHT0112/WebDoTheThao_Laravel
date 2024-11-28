@@ -12,6 +12,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Mail;
+use Illuminate\Support\Str;
 class CartService
 {
     public function create($request)
@@ -97,12 +98,14 @@ class CartService
                 'khuyenmai' => $request->input('khuyenmai'),
                 'coupon'=>$request->input('couponss'),
             ]);
+            $token =strtoupper(Str::random(20));
             $emailnhan=$request->input('email');
             $nguoinhan=$request->input('name');
-
             $Idproducts=array_keys($carts);
             $getProducts=Product::whereIn('id', $Idproducts)->where('active',1)->get();
         Mail::send('frontend.mail',[
+            'token'=>$token,
+            'customer'=>$customer,
             'carts'=>$carts,
             'getProducts'=>$getProducts,
             'address'=>$request->input('address'),

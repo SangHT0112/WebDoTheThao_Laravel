@@ -110,16 +110,16 @@
 
         </div>
     </div>
-    <!-- Đoạn Giới Thiệu và Video --> 
+    <!-- Đoạn Giới Thiệu và Video -->
     <div class="row p-t-30">
         <div class="col-12">
             <div class="full-screen-section bg-dark text-white p-4">
-         
+
                 <div class="d-flex justify-content-between align-items-center">
 
                     <div class="col-md-6">
                         <h2 class="ltext-104 cl5" style="font-family: 'Merriweather', serif;color: white">GIỚI THIỆU</h2>
-                        <p class="stext-102 cl6" style="color: white">
+                        <p class="stext" style="color: white">
                             {{$video->cmt}}
                         </p>
                     </div>

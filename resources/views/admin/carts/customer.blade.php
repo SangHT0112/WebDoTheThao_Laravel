@@ -9,7 +9,9 @@
             <th>Số Điện Thoại</th>
             <th>Email</th>
             <th>Ngày Đặt hàng</th>
+            <th>Tình trạng đơn hàng</th>
             <th style="width: 100px">&nbsp;</th>
+
         </tr>
         </thead>
         <tbody>
@@ -20,6 +22,13 @@
                 <td>{{ $customer->phone }}</td>
                 <td>{{ $customer->email }}</td>
                 <td>{{ $customer->created_at }}</td>
+                @if($customer->token)
+                    <td><i class="status confirmed" style="color: green">Đã xác nhận</i></td>
+                @else
+                    <td><i class="status unconfirmed" style="color: red">Chưa xác nhận</i></td>
+
+                @endif
+
                 <td>
                     <a class="btn btn-primary btn-sm" href="/admin/customers/view/{{ $customer->id }}">
                         <i class="fas fa-eye"></i>
