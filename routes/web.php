@@ -99,7 +99,9 @@ Route::middleware(['auth'])->group(function () {
         Route::get('customers', [\App\Http\Controllers\Admin\CartController::class, 'index']);
         Route::get('doanhthu',[\App\Http\Controllers\Admin\CartController::class,'doanhthu'])->name('doanhthu');
         Route::post('doanhthu',[\App\Http\Controllers\Admin\CartController::class,'postdoanhthu'])->name('postdoanhthu');
+        Route::post('xuatexcel',[\App\Http\Controllers\Admin\CartController::class,'xuatexcel'])->name('xuatexcel');
         Route::get('customers/view/{customer}', [\App\Http\Controllers\Admin\CartController::class, 'show']);
+
 
         #coupon
         Route::prefix('coupons')->group(function(){

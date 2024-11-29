@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\UserExport;
 use App\Http\Controllers\Controller;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 use App\Http\Services\CartService;
 use Symfony\Component\HttpFoundation\Session\Session;
+use Maatwebsite\Excel\Facades\Excel;
+
+
 
 class CartController extends Controller
 {
@@ -40,6 +44,7 @@ class CartController extends Controller
     public function doanhthu()
     {
         $doanhthu = session('doanhthu');
+
         return view('admin.carts.doanhthu', [
             'title' => 'Doanh Thu',
             'doanhthu' => $doanhthu
@@ -59,10 +64,23 @@ class CartController extends Controller
                 return redirect()->back()->with('error','Không có doanh thu!');
             }
             session(['doanhthu' => $doanhthu]);
+            session(['tungay'=>$request->tungay]);
+            session(['denngay'=>$request->denngay]);
             return redirect()->back();
         }
 
 
+    }
+
+    public function xuatexcel(Request $request)
+    {
+        $kt=Customer::whereBetween('created_at', [$request->tungay, $request->denngay])->whereNotNull('token')->get();
+        if($kt->isEmpty()){
+            return redirect()->back()->with('error','Không có doanh thu!');
+        }
+        $tungay=$request->tungay;
+        $denngay=$request->denngay;
+        return Excel::download(new UserExport($tungay,$denngay), 'danh-sach-doanh-thu.xlsx');
     }
 
 }
