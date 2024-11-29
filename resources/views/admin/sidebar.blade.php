@@ -144,6 +144,15 @@
                         </li>
 
                     </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('doanhthu')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Doanh thu</p>
+                            </a>
+                        </li>
+
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">

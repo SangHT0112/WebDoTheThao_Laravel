@@ -79,15 +79,15 @@ class Helper
         foreach ($menus as $key=>$menu) {
             if($menu->parent_id == $parent_id){
                 $html .= '
-                <li>
-                    <a href="/danh-muc/' . $menu->id . '-'.  Str::slug($menu ->name,'-') .'.html " style="font-size: 15px;">
+                <li style="">
+                    <a href="/danh-muc/' . $menu->id . '-'.  Str::slug($menu ->name,'-') .'.html " style="font-size: 20px; font-family:  Roboto, sans-serif;">
                        ' . $menu->name . '
                     </a>';
 
                 unset($menus[$key]);
 
                 if(self::isChild($menus,$menu->id)){
-                    $html .='<ul role="menu" class="sub-menu" >';
+                    $html .='<ul role="menu" class="sub-menu" style="font-family:  Roboto, sans-serif;">';
                     $html .='<li>';
                     $html .=self::menus($menus,$menu->id);
                     $html .='</li>';

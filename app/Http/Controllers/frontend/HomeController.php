@@ -61,7 +61,7 @@ class HomeController extends Controller
     public function search(Request $request)
     {
 
-            $products = Product::where('name','like','%'.$request->search.'%')->paginate(12);
+            $products = Product::where('name','like','%'.$request->search.'%')->paginate(1000);
 
             if($products->isEmpty() || empty($request->search)){
                 return view('frontend.search.listsearch',[

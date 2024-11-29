@@ -46,13 +46,13 @@
                 <div class="menu-desktop">
                     <ul class="main-menu" >
 
-                        <li class="active-menu"><a href="/" style="font-size: 15px;">HOME</a></li>
+                        <li class="active-menu"><a href="/" style="font-size: 20px;">HOME</a></li>
 
                         {!! $menusHtml !!}
 
 
                         <li class="active-menu">
-                            <a href="{{route('saler')}}" style="font-size: 15px;">
+                            <a href="{{route('saler')}}" style="font-size: 20px;">
                                 BEST SALE
                                 <img src="{{asset('/template/frontend/images/flash-sale.png')}}" alt="fire" style="width: 20px; height: 20px; position: relative;top: -15px;left: -5px">
 

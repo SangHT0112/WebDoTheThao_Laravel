@@ -8,12 +8,13 @@
 		</a>
 
 		<a href="/danh-muc/{{ $product->menu->id }}-{{ Str::slug($product->menu->name) }}.html"
-		   class="stext-109 cl8 hov-cl1 trans-04">
+		   class="stext-109 cl8 hov-cl1 trans-04" style="font-family:  Roboto, sans-serif;">
+
 			{{ $product->menu->name }}
-			<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+            <i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
 		</a>
 
-		<span class="stext-109 cl4">
+		<span class="stext-109 cl4" style="font-family:  Roboto, sans-serif;">
 			{{ $title }}
 		</span>
 	</div>
@@ -63,7 +64,7 @@
 
                         @include('admin.alert')
 
-                        <h4 class="mtext-105 cl2 js-name-detail p-b-14">
+                        <h4 class="mtext-105 cl2 js-name-detail p-b-14" style="font-family:  Roboto, sans-serif;">
                             {{ $title }}
                         </h4>
 
@@ -74,11 +75,11 @@
                             @elseif( $product->price_sale==0 && $product->price >0)
                                 <span style="font-size:20px">{{number_format($product->price)}} VNĐ <br> </span>
                             @else
-                                <a href="#" style="color: red">LIÊN HỆ</a>
+                                <a href="#" style="color: red" >LIÊN HỆ</a>
                             @endif
 						</span>
 
-                        <p class="stext-102 cl3 p-t-23">
+                        <p class="stext-102 cl3 p-t-23" style="font-family:  Roboto, sans-serif;">
                             {{ $product->description }}
                         </p>
 
@@ -103,7 +104,7 @@
 
 
                                             <button type="submit"
-                                                    class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 ">
+                                                    class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 " style="font-family:  Roboto, sans-serif;">
                                                 Thêm Giỏ Hàng
                                             </button>
                                             <input type="hidden" name="product_id" value="{{ $product->id }}">
@@ -143,7 +144,7 @@
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item p-b-10">
-                            <a class="nav-link active" data-toggle="tab" href="#description" role="tab">Mô Tả Sản Phẩm</a>
+                            <a class="nav-link active" data-toggle="tab" href="#description" role="tab" style="font-family:  Roboto, sans-serif;">Mô Tả Sản Phẩm</a>
                         </li>
 
                     </ul>
@@ -153,7 +154,7 @@
                         <!-- - -->
                         <div class="tab-pane fade show active" id="description" role="tabpanel">
                             <div class="how-pos2 p-lr-15-md">
-                                <p class="stext-102 cl6">
+                                <p class="stext-102 cl6" style="font-family:  Roboto, sans-serif;">
                                     {!! $product->content !!}
                                 </p>
                             </div>
@@ -165,7 +166,7 @@
 
         <div class="bg6 flex-c-m flex-w size-302 m-t-73 p-tb-15">
 
-            <span class="stext-107 cl6 p-lr-25">
+            <span class="stext-107 cl6 p-lr-25" style="font-family:  Roboto, sans-serif;">
 				Loại Sản Phẩm: {{ $product->menu->name }}
 			</span>
         </div>
@@ -174,7 +175,7 @@
 	<section class="sec-relate-product bg0 p-t-45 p-b-105">
         <div class="container">
             <div class="p-b-45">
-                <h3 class="ltext-106 cl5 txt-center">
+                <h3 class="ltext-106 cl5 txt-center" style="font-family:  Roboto, sans-serif;">
                    Xem thêm sản phẩm
                 </h3>
             </div>

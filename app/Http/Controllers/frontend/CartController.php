@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Services\CartService;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
-
+use Mail;
 class CartController extends Controller
 {
     protected $cartService;
@@ -98,6 +98,10 @@ class CartController extends Controller
     public function Xacnhan(Customer $id,$token)
     {
         $id->update(['token'=>$token]);
-        return view('frontend.xacnhan');
+        Mail::send('frontend.xacnhan',[],function ($email) use ($id){
+            $email->subject('Xác nhận thành công đơn hàng!');
+            $email->to($id->email,$id->name);
+        });
+        return redirect()->route('home');
     }
 }

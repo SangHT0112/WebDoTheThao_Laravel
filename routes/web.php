@@ -97,6 +97,8 @@ Route::middleware(['auth'])->group(function () {
 
         #Cart
         Route::get('customers', [\App\Http\Controllers\Admin\CartController::class, 'index']);
+        Route::get('doanhthu',[\App\Http\Controllers\Admin\CartController::class,'doanhthu'])->name('doanhthu');
+        Route::post('doanhthu',[\App\Http\Controllers\Admin\CartController::class,'postdoanhthu'])->name('postdoanhthu');
         Route::get('customers/view/{customer}', [\App\Http\Controllers\Admin\CartController::class, 'show']);
 
         #coupon

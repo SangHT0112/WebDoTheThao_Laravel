@@ -78,7 +78,7 @@ class ProductController extends Controller
     {
         if(!empty($request->search)) {
             $searchproducts = $request->search;
-            $searchs = Product::where('name', 'like', '%' . $searchproducts . '%')->paginate(15);
+            $searchs = Product::where('name', 'like', '%' . $searchproducts . '%')->paginate(1000);
             return view('admin.product.search', [
                 'search' => $searchs,
                 'title' => ' Danh Sách Tìm Kiếm'

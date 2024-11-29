@@ -97,6 +97,7 @@ class CartService
                 'total'=>$request->input('totals'),
                 'khuyenmai' => $request->input('khuyenmai'),
                 'coupon'=>$request->input('couponss'),
+                'created_at'=>now()
             ]);
             $token =strtoupper(Str::random(20));
             $emailnhan=$request->input('email');
@@ -112,7 +113,7 @@ class CartService
             'khuyenmai'=>$request->input('khuyenmai'),
             'total'=>$request->input('totals')
         ],function ($email) use ($emailnhan,$nguoinhan){
-            $email->subject('Xác nhận');
+            $email->subject('Xác nhận đơn hàng');
             $email->to($emailnhan,$nguoinhan);
         });
             $this->infoProductCart($carts, $customer->id);

@@ -131,7 +131,7 @@
 
         <p><strong>Phương thức thanh toán:</strong> Thanh toán khi nhận hàng</p>
         <p><strong>Địa chỉ giao hàng:</strong>{{$address}}</p>
-
+        <p style="color: red;font-size: 10px">( Nếu bạn không xác nhận đơn hàng trong 24h tới, đơn hàng sẽ bị hủy! )</p>
         <a href="{{route('accept',['id'=>$customer , 'token'=>$token])}}" class="cta-button" target="_blank">Xác nhận đơn hàng</a>
     </div>
 
