@@ -12,7 +12,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-lg-3 p-b-50">
-                    <h4 class="stext-301 cl0 p-b-30">
+                    <h4 class="stext-301 cl0 p-b-30" style="font-family:  Roboto, sans-serif;">
                         DANH MỤC THỊNH HÀNH
                     </h4>
                     <ul>
@@ -20,7 +20,7 @@
 
                             <li class="p-b-10">
                                 <a href="{{route('danhmuc.sanpham',['id'=>$menufooters->id,'slug'=>Str::slug($menufooters->name, '-')])}}"
-                                   class="stext-107 cl7 hov-cl1 trans-04">
+                                   class="stext-107 cl7 hov-cl1 trans-04" style="font-family:  Roboto, sans-serif;">
                                     {{$menufooters->name}}
                                 </a>
                             </li>
@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="col-sm-6 col-lg-3 p-b-50">
-                    <h4 class="stext-301 cl0 p-b-30">
+                    <h4 class="stext-301 cl0 p-b-30" style="font-family:  Roboto, sans-serif;">
                         Help
                     </h4>
 
@@ -61,7 +61,7 @@
                 </div>
 
                 <div class="col-sm-6 col-lg-3 p-b-50">
-                    <h4 class="stext-301 cl0 p-b-30">
+                    <h4 class="stext-301 cl0 p-b-30" style="font-family:  Roboto, sans-serif;">
                        LIÊN HỆ
                     </h4>
 
@@ -85,7 +85,7 @@
                 </div>
 
                 <div class="col-sm-6 col-lg-3 p-b-50">
-                    <h4 class="stext-301 cl0 p-b-30">
+                    <h4 class="stext-301 cl0 p-b-30" style="font-family:  Roboto, sans-serif;">
                         EMAIL
                     </h4>
 

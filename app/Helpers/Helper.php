@@ -71,34 +71,30 @@ class Helper
     }
 
 
-    public static function menus($menus,$parent_id = 0)
+    public static function menus($menus, $parent_id = 0, $isChild = false)
     {
-        $menus = $menus->sortBy('id');  //sap xep
+        $menus = $menus->sortBy('id');
 
         $html = '';
-        foreach ($menus as $key=>$menu) {
-            if($menu->parent_id == $parent_id){
+        foreach ($menus as $key => $menu) {
+            if ($menu->parent_id == $parent_id) {
                 $html .= '
-                <li style="">
-                    <a href="/danh-muc/' . $menu->id . '-'.  Str::slug($menu ->name,'-') .'.html " style="font-size: 20px; font-family:  Roboto, sans-serif;">
-                       ' . $menu->name . '
-                    </a>';
+            <li>
+                <a href="/danh-muc/' . $menu->id . '-' . Str::slug($menu->name, '-') . '.html" style="font-size: ' . ($isChild ? '15px' : '20px') . '; font-family: Roboto, sans-serif;">
+                   ' . $menu->name . '
+                </a>';
 
                 unset($menus[$key]);
 
-                if(self::isChild($menus,$menu->id)){
-                    $html .='<ul role="menu" class="sub-menu" style="font-family:  Roboto, sans-serif;">';
-                    $html .='<li>';
-                    $html .=self::menus($menus,$menu->id);
-                    $html .='</li>';
-                    $html .='</ul>';
-
+                if (self::isChild($menus, $menu->id)) {
+                    $html .= '<ul role="menu" class="sub-menu" style="font-family: Roboto, sans-serif;">';
+                    $html .= '<li>';
+                    $html .= self::menus($menus, $menu->id, true);
+                    $html .= '</li>';
+                    $html .= '</ul>';
                 }
 
-
-            $html .='    </li>
-
-                ';
+                $html .= '</li>';
             }
         }
 

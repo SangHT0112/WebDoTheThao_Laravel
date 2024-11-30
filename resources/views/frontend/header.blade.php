@@ -8,28 +8,7 @@
            $logo =Config::where('status',1)->where('name','logo')->first();
            $favicon =Config::where('status',1)->where('name','favicon')->first();
     @endphp
-    <style>
-        .main-menu {
-            font-family:  'Roboto', sans-serif;
-            display: grid;
-            grid-auto-flow: column;
-            gap: 1px; /* Khoảng cách giữa các mục */
-            padding: 0;
-            margin: 0;
-            list-style: none;
-        }
 
-        .main-menu a {
-            font-family:  'Roboto', sans-serif;
-
-            font-size: 15px;
-            text-decoration: none;
-            color: #333;
-
-        }
-
-
-    </style>
 
         <!-- Header desktop -->
     <div class="container-menu-desktop">
@@ -46,14 +25,14 @@
                 <div class="menu-desktop">
                     <ul class="main-menu" >
 
-                        <li class="active-menu"><a href="/" style="font-size: 20px;">HOME</a></li>
+                        <li class="active-menu"><a href="/" style="font-size: 20px; font-family:  Roboto, sans-serif;">Home</a></li>
 
                         {!! $menusHtml !!}
 
 
                         <li class="active-menu">
-                            <a href="{{route('saler')}}" style="font-size: 20px;">
-                                BEST SALE
+                            <a href="{{route('saler')}}" style="font-size: 20px;font-family:  Roboto, sans-serif;">
+                                Best Sale
                                 <img src="{{asset('/template/frontend/images/flash-sale.png')}}" alt="fire" style="width: 20px; height: 20px; position: relative;top: -15px;left: -5px">
 
                             </a>
