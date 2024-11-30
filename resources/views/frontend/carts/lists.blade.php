@@ -22,6 +22,7 @@
                                     </tr>
 
                                     @foreach($products as $key => $product)
+                                        @if($carts[$product->id] !=0)
                                         @php
                                             $price = $product->price_sale != 0 ? $product->price_sale : $product->price;
                                             $priceEnd = $price * $carts[$product->id];
@@ -59,6 +60,7 @@
                                                 <a href="{{route('carts.delete', $product->id )}}" style="color: red;">Xóa</a>
                                             </td>
                                         </tr>
+                                        @endif
                                     @endforeach
 
 
@@ -185,7 +187,7 @@
 
 
         <div class="header-cart-item-txt p-t-8" style="margin-left: 30px">
-            <span class="header-cart-item-name" style="font-size: 20px">There are no products in the cart yet</span>
+            <span class="header-cart-item-name" style="font-size: 20px">Oops! Giỏ hàng của bạn trống!</span>
         </div>
     </div>
 @endif

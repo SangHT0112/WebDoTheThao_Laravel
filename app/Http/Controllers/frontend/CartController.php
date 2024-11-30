@@ -42,6 +42,11 @@ class CartController extends Controller
 
     public function update(Request $request)
     {
+        Session::put(['name' => $request->name]);
+        Session::put(['phone' => $request->phone]);
+        Session::put(['address' => $request->address]);
+        Session::put(['email' => $request->email]);
+        Session::put(['contents' => $request->contents]);
         $this->cartService->update($request);
 
         return redirect()->back();
@@ -102,6 +107,6 @@ class CartController extends Controller
             $email->subject('Xác nhận thành công đơn hàng!');
             $email->to($id->email,$id->name);
         });
-        return redirect()->route('home');
+        return redirect('http://mail.google.com');
     }
 }
