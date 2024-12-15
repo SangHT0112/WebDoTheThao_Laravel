@@ -38,8 +38,7 @@ class ProductAdminService
 
         try {
             $request->except('_token');
-            Product::create($request->except('description'),['description' => strip_tags($request->description)]);
-
+            Product::create($request->all());
             Session::flash('success', 'Thêm Sản phẩm thành công');
         } catch (\Exception $err) {
             Session::flash('error', 'Thêm Sản phẩm lỗi');
