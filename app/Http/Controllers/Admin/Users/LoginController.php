@@ -31,10 +31,12 @@ class LoginController extends Controller
         {
             return redirect()->route('admin');
         }
+        else{
         // Nếu đăng nhập không thành công, trả về trang trước đó với thông báo lỗi
         return redirect()->back()->withErrors([
             'login' => 'Thông tin đăng nhập không chính xác.',
         ])->withInput(); // Giữ lại giá trị input của người dùng
+            }
     }
 
     public function logout(){

@@ -49,6 +49,7 @@
         </div>
         <div class="card login-card p-4">
             <div class="card-body">
+                @include('admin.alert')
                 <p class="login-box-msg text-center mb-4">Form Đăng Nhập</p>
                 <form action="{{ route('login.store') }}" method="post">
                     @csrf
