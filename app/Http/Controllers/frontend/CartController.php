@@ -55,7 +55,6 @@ class CartController extends Controller
     public function remove($id = 0)
     {
         $this->cartService->remove($id);
-
         return redirect('/carts');
     }
 

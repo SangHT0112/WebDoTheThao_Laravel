@@ -35,7 +35,6 @@ class ProductAdminService
     {
         $isValidPrice = $this->isValidPrice($request);
         if ($isValidPrice === false) return false;
-
         try {
             $request->except('_token');
             Product::create($request->all());

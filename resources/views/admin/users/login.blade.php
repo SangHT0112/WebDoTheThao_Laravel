@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <style>
@@ -51,7 +52,7 @@
             <div class="card-body">
                 @include('admin.alert')
                 <p class="login-box-msg text-center mb-4">Form Đăng Nhập</p>
-                <form action="{{ route('login.store') }}" method="post">
+                <form action="{{ route('login.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="input-group mb-3">
                         <input type="email" name="email" class="form-control" placeholder="Email">

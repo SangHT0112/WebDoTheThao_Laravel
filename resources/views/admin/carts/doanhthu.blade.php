@@ -42,6 +42,7 @@
         </ul>
 
     </form>
+
     <div id="myfirstchart" style="height: 250px;"></div>
         <script>
             var doanhthuData = @json($doanhthu);
@@ -51,6 +52,7 @@
             value: item.total
         };
         });
+
             new Morris.Line({
             element: 'myfirstchart',
             data: chartData,

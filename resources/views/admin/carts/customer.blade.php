@@ -31,13 +31,18 @@
                 @endif
 
                 <td>
+                    <div class="d-flex justify-content-start">
                     <a class="btn btn-primary btn-sm" href="/admin/customers/view/{{ $customer->id }}">
                         <i class="fas fa-eye"></i>
                     </a>
-                    <a href="#" class="btn btn-danger btn-sm"
-                       onclick="removeRow({{ $customer->id }}, '/admin/customers/destroy')">
-                        <i class="fas fa-trash"></i>
-                    </a>
+                    <form action="{{ route('doanhthu.remove', $customer->id) }}" method="POST" style="margin-left: 5px;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </form>
+                    </div>
                 </td>
             </tr>
         @endforeach

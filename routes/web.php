@@ -98,6 +98,7 @@ Route::middleware(['auth'])->group(function () {
         #Cart
         Route::get('customers', [\App\Http\Controllers\Admin\CartController::class, 'index']);
         Route::get('doanhthu',[\App\Http\Controllers\Admin\CartController::class,'doanhthu'])->name('doanhthu');
+        Route::Delete('donhang/{customer}',[\App\Http\Controllers\Admin\CartController::class,'remove'])->name('doanhthu.remove');
         Route::post('doanhthu',[\App\Http\Controllers\Admin\CartController::class,'postdoanhthu'])->name('postdoanhthu');
         Route::post('xuatexcel',[\App\Http\Controllers\Admin\CartController::class,'xuatexcel'])->name('xuatexcel');
         Route::get('customers/view/{customer}', [\App\Http\Controllers\Admin\CartController::class, 'show']);

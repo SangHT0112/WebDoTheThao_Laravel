@@ -88,7 +88,6 @@ class CartService
 
             if (is_null($carts))
                 return false;
-
             $customer = Customer::create([
                 'name' => $request->input('name'),
                 'phone' => $request->input('phone'),
@@ -143,7 +142,6 @@ class CartService
             ->where('active', 1)
             ->whereIn('id', $productId)
             ->get();
-
         $data = [];
         foreach ($products as $product) {
             $data[] = [

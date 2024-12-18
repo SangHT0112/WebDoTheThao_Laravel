@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Exports\UserExport;
 use App\Http\Controllers\Controller;
+use App\Models\Cart;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 use App\Http\Services\CartService;
@@ -18,11 +19,12 @@ class CartController extends Controller
     public function __construct(CartService $cart)
     {
         $this->cart = $cart;
-        Customer::whereNull('token')->where('created_at', '<', now()->subDay())->delete();
+
     }
 
     public function index()
     {
+        Customer::whereNull('token')->where('created_at', '<', now()->subDay())->delete();
         return view('admin.carts.customer', [
             'title' => 'Danh Sách Đơn Đặt Hàng',
             'customers' => $this->cart->getCustomer()
@@ -33,7 +35,6 @@ class CartController extends Controller
     public function show(Customer $customer)
     {
         $carts = $this->cart->getProductForCart($customer);
-
         return view('admin.carts.detail', [
             'title' => 'Chi Tiết Đơn Hàng: ' . $customer->name,
             'customer' => $customer,
@@ -41,10 +42,21 @@ class CartController extends Controller
         ]);
     }
 
+    public function remove(Customer $customer)
+    {
+        $Cart=Cart::where('customer_id',$customer->id)->delete();
+        if($customer) {
+            $customer->delete();
+            return redirect()->back()->with('success',"Xóa đơn hàng thành công!");
+        }
+        else
+            return redirect()->back()->with('error',"Xóa đơn hàng không thành công!");
+    }
+
     public function doanhthu()
     {
         $doanhthu = session('doanhthu');
-
+        session()->forget('doanhthu');
         return view('admin.carts.doanhthu', [
             'title' => 'Doanh Thu',
             'doanhthu' => $doanhthu
