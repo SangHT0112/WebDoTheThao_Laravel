@@ -3,7 +3,13 @@
 	<meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--===============================================================================================-->
 	<link rel="icon" type="image/png" href="/template/frontend/images/icons/favicon.png"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="/template/frontend/vendor/bootstrap/css/bootstrap.min.css">
@@ -116,5 +122,7 @@
                 closeModal(productId);
             });
         });
+
+
     </script>
 <meta name="csrf-token" content="{{ csrf_token() }}">

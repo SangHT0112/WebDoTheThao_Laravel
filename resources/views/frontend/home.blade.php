@@ -1,6 +1,8 @@
 @extends('frontend/main')
 
 @section('content')
+
+    @include('frontend/qc')
     <!-- Slider -->
     <section class="section-slide">
         <div class="wrap-slick1">

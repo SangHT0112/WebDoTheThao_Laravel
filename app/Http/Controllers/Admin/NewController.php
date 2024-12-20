@@ -25,7 +25,6 @@ class NewController extends Controller
         ],[
             'title.required'=>'Vui lòng nhập tiêu đề!',
             'description.required'=>'Vui lòng nhập mô tả!',
-
         ]);
         try{
             $id='';
@@ -39,7 +38,7 @@ class NewController extends Controller
             'status'=>(int)$request->status,
             'title'=>(string)$request->title,
             'description'=>(string)$request->description,
-
+            'qc'=>(int)$request->qc,
             'imgs'=>$id
         ]);
 
@@ -71,14 +70,14 @@ class NewController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'image' => 'required'
+
         ],[
             'title.required'=>'Tiêu đề không được để trống!',
             'description.required'=>'Mô tả không được để trống!',
-            'image.required'=>'Ảnh không được để trống!'
+
         ]);
         try{
-        $id->update(["title"=>$request->title , "description"=>$request->description ,"status"=>$request->status]);
+        $id->update(["title"=>$request->title , "description"=>$request->description ,"status"=>$request->status,"qc"=>$request->qc]);
 
         if($request->hasFile('image') && $request->file('image')->isValid()){
             $nameimage = $request->file('image')->getClientOriginalName();

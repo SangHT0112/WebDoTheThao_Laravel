@@ -1,5 +1,12 @@
 <header>
+<style>
+    /* Đảm bảo header không bị che khuất */
+    .container-menu-desktop, .wrap-header-mobile {
 
+        z-index: 1000;
+    }
+
+</style>
     @php
         use App\Http\Controllers\Controller;
         use Illuminate\Http\Request;

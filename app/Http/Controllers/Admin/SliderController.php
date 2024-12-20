@@ -28,7 +28,9 @@ class SliderController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'thumb' => 'required',
-            'url'   => 'required'
+        ],[
+            'name.required'=>'Vui lòng nhập tiêu đề!',
+            'thumb.required'=>"Ảnh Đại Diện không được trống!",
         ]);
         $this->slider->insert($request);
 

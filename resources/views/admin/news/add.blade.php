@@ -38,7 +38,17 @@
                 </div>
 
             </div>
-
+            <div class="form-group">
+                <label>Quảng cáo</label>
+                <div class="custom-control custom-radio">
+                    <input class="custom-control-input" value="1" type="radio" id="qc" name="qc" checked="">
+                    <label for="qc" class="custom-control-label">Có</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input class="custom-control-input" value="0" type="radio" id="nonqc" name="qc">
+                    <label for="nonqc" class="custom-control-label">Không</label>
+                </div>
+            </div>
 
 
 

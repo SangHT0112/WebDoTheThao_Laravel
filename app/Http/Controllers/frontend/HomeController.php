@@ -29,12 +29,13 @@ class HomeController extends Controller
     }
     public function index()
     {
+        $qc = News::where('qc', 1)->get();
+        session(['qc' => $qc]);
+
         $logo=session('logo');/*test*/
-        $news=News::get();
+        $news=News::where('status',1)->get();
         $video=Config::where('status','1')->where('name','video')->first();
-
         return view('frontend.home',[
-
             'title' => 'Shop-SP',
            'sliders' => $this->slider->show(),
            'menus'=>$this->menu->show(),

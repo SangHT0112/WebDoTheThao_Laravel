@@ -10,6 +10,7 @@
             <th>Ảnh</th>
             <th>Cập nhật</th>
             <th>Trạng thái</th>
+            <th>Quảng cáo</th>
             <th style="width: 100px">&nbsp;</th>
 
 
@@ -30,6 +31,13 @@
                 <td>{{$news->updated_at}}</td>
                 <td>
                     @if($news->status == 1)
+                        <span class="btn btn-success btn-xs">YES</span>
+                    @else
+                        <span class="btn btn-danger btn-xs">NO</span>
+                    @endif
+                </td>
+                <td>
+                    @if($news->qc == 1)
                         <span class="btn btn-success btn-xs">YES</span>
                     @else
                         <span class="btn btn-danger btn-xs">NO</span>

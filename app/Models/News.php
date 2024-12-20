@@ -10,6 +10,7 @@ class News extends Model
     use HasFactory;
     public $table = 'news';
     public $fillable=[
+        "qc",
         "status",
         "title",
         "description",

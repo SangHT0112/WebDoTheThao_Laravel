@@ -10,9 +10,11 @@
                 <label for="menu">Ảnh</label>
                 <input type="file"  class="form-control" id="upload" name="image">
                 <div id="image_show">
-
+                    <a href="{{"/storage/".$news->imgs}}" target="_blank">
+                        <img src="{{"/storage/".$news->imgs}}" width="100px">
+                    </a>
                 </div>
-                <input type="hidden" name="thumb" id="thumb">
+
             </div>
 
             <div class="row">
@@ -39,9 +41,17 @@
 
             </div>
 
-
-
-
+            <div class="form-group">
+                <label>Quảng cáo</label>
+                <div class="custom-control custom-radio">
+                    <input class="custom-control-input" value="1" type="radio" id="qc" name="qc" checked="">
+                    <label for="qc" class="custom-control-label">Có</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input class="custom-control-input" value="0" type="radio" id="nonqc" name="qc">
+                    <label for="nonqc" class="custom-control-label">Không</label>
+                </div>
+            </div>
 
             <div class="form-group">
                 <label>Kích Hoạt</label>
@@ -50,10 +60,11 @@
                     <label for="active" class="custom-control-label">Có</label>
                 </div>
                 <div class="custom-control custom-radio">
-                    <input class="custom-control-input" value="0" type="radio" id="no_active" name="status" >
+                    <input class="custom-control-input" value="0" type="radio" id="no_active" name="status">
                     <label for="no_active" class="custom-control-label">Không</label>
                 </div>
             </div>
+
 
             <div class="form-group">
                 <label for="created_at">Ngày cập nhật</label>
