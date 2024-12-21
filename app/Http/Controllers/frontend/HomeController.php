@@ -66,7 +66,7 @@ class HomeController extends Controller
 
             if($products->isEmpty() || empty($request->search)){
                 return view('frontend.search.listsearch',[
-                    'title' => 'Không Có  Sản Phẩm Tìm Kiếm',
+                    'title' => 'Không Có Sản Phẩm Tìm Kiếm',
                     'products' => null
                 ]);
             }

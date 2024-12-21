@@ -13,6 +13,21 @@
         width: 80%;
         max-width: 1200px;
 
+    } .modal-content {
+          background-color: #e0ffff;
+          color: black;
+      }
+
+    .modal-header {
+        border-bottom: 1px solid #b0e0e6;
+    }
+
+    .modal-body {
+        background-color: #e0ffff;
+    }
+
+    .modal-footer {
+        background-color: #e0ffff;
     }
 
 </style>
@@ -29,7 +44,7 @@ $qc=session('qc',[]);
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body" style="padding: 0px">
                         <img src="{{ "/storage/".$qcs->imgs }}" style="width: 100%; height: 600px;">
                     </div>
                 </div>
