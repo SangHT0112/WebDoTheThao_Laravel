@@ -35,27 +35,27 @@
 
                     <ul>
                         <li class="p-b-10">
-                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                            <span href="#" class="stext-107 cl7 hov-cl1 trans-04">
                                 Track Order
-                            </a>
+                            </span>
                         </li>
 
                         <li class="p-b-10">
-                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                            <span href="#" class="stext-107 cl7 hov-cl1 trans-04">
                                 Returns
-                            </a>
+                            </span>
                         </li>
 
                         <li class="p-b-10">
-                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                            <span href="#" class="stext-107 cl7 hov-cl1 trans-04">
                                 Shipping
-                            </a>
+                            </span>
                         </li>
 
                         <li class="p-b-10">
-                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                            <span href="#" class="stext-107 cl7 hov-cl1 trans-04">
                                 FAQs
-                            </a>
+                            </span>
                         </li>
                     </ul>
                 </div>
@@ -70,15 +70,15 @@
                     </p>
 
                     <div class="p-t-27">
-                        <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+                        <a href="https://www.facebook.com/fishtieuphu/" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
                             <i class="fa fa-facebook"></i>
                         </a>
 
-                        <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+                        <a href="mailto:macarada77@gmail.com" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
                             <i class="fa fa-instagram"></i>
                         </a>
 
-                        <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+                        <a href="https://www.youtube.com/@26.nguyenminhphat52" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
                             <i class="fa fa-youtube"></i>
                         </a>
                     </div>
@@ -276,15 +276,15 @@
 									</a>
 								</div>
 
-								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Facebook">
+								<a href="https://www.facebook.com/fishtieuphu/" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Facebook">
 									<i class="fa fa-facebook"></i>
 								</a>
 
-								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Twitter">
+								<a href="mailto:macarada77@gmail.com" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Twitter">
 									<i class="fa fa-twitter"></i>
 								</a>
 
-								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Google Plus">
+								<a href="https://www.youtube.com/@26.nguyenminhphat52" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Google Plus">
 									<i class="fa fa-google-plus"></i>
 								</a>
 							</div>

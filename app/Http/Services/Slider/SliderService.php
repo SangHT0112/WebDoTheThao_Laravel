@@ -63,6 +63,6 @@ class SliderService
 
     public function show()
     {
-        return Slider::where('active', 1)->orderByDesc('sort_by')->get();
+        return Slider::where('active', 1)->orderBy('sort_by')->get();
     }
 }

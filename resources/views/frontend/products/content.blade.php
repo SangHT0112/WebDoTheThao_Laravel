@@ -104,7 +104,7 @@
 
 
                                             <button type="submit"
-                                                    class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 " style="font-family:  Roboto, sans-serif;">
+                                                    class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 " style="font-family:  Roboto, sans-serif; position: relative;left: -11px">
                                                 Thêm Giỏ Hàng
                                             </button>
                                             <input type="hidden" name="product_id" value="{{ $product->id }}">
@@ -116,20 +116,20 @@
                         </div>
 
                         <!--  -->
-                        <div class="flex-w flex-m p-l-100 p-t-40 respon7">
+                        <div class="flex-w flex-m p-l-100 p-t-40 respon7" style="position: relative;left: 31px;top:-20px">
 
 
-                            <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100"
+                            <a href="https://www.facebook.com/fishtieuphu/" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100"
                                data-tooltip="Facebook">
                                 <i class="fa fa-facebook"></i>
                             </a>
 
-                            <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100"
-                               data-tooltip="Twitter">
-                                <i class="fa fa-twitter"></i>
+                            <a href="https://www.youtube.com/@26.nguyenminhphat52" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100"
+                               data-tooltip="YouTube">
+                                <i class="fa fa-youtube"></i>
                             </a>
 
-                            <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100"
+                                <a href="mailto:macarada77@gmail.com" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100"
                                data-tooltip="Google Plus">
                                 <i class="fa fa-google-plus"></i>
                             </a>

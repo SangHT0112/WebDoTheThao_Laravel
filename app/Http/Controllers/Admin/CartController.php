@@ -24,6 +24,8 @@ class CartController extends Controller
 
     public function index()
     {
+        $customerIds = Customer::whereNull('token')->pluck('id');
+        Cart::whereIn('customer_id', $customerIds)->delete();
         Customer::whereNull('token')->where('created_at', '<', now()->subDay())->delete();
         return view('admin.carts.customer', [
             'title' => 'Danh Sách Đơn Đặt Hàng',

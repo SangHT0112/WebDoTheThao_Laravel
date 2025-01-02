@@ -31,7 +31,6 @@ class HomeController extends Controller
     {
         $qc = News::where('qc', 1)->get();
         session(['qc' => $qc]);
-
         $logo=session('logo');/*test*/
         $news=News::where('status',1)->get();
         $video=Config::where('status','1')->where('name','video')->first();
